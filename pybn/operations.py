@@ -81,7 +81,7 @@ def FactorProduct(A,B):
     # Check that variables in both A and B have the same cardinality
     dummy = np.intersect1d(A.var, B.var)
     if dummy == np.array([]):
-      print( 'Dimensionality mismatch in factors')
+      print 'Dimensionality mismatch in factors'
 
     # Set the variables of C
     C.var = np.union1d(A.var, B.var)
@@ -157,7 +157,7 @@ def FactorMarginalization(A, V):
 
     # Check for empty resultant factor
     if B.var == np.array([]):
-      print( 'Error: Resultant factor has empty scope')
+      print 'Error: Resultant factor has empty scope'
     else:
 
       # Initialize B.card and B.val
@@ -201,7 +201,7 @@ def ObserveEvidence(F, E):
 
     # Check validity of evidence
     # if x == 0:
-    #   print( 'Warning: Evidence not set for variable')
+    #   print 'Warning: Evidence not set for variable'
 
     for j in range(len(F)):
       # Does factor contain variable?
@@ -211,7 +211,7 @@ def ObserveEvidence(F, E):
 
         # Check validity of evidence
         if x > F[j].card[indx] or x < 0:
-          print( 'Error: Invalid evidence, X_'+str(v)+' = '+str(x))
+          print 'Error: Invalid evidence, X_'+str(v)+' = '+str(x)
 
         # Compute some helper indices
         assignment = IndexToAssignment(np.arange(np.prod(F[j].card)),F[j].card)
@@ -228,15 +228,15 @@ def ObserveEvidence(F, E):
 
         # Check validity of evidence / resulting factor
         if F[j].val == np.array([]):
-          print( 'Warning: Factor '+str(j)+' makes variable assignment impossible')
+          print 'Warning: Factor '+str(j)+' makes variable assignment impossible'
   return F
 
 def SetValueOfAssignment(F, A, v, VO=None):
   if VO == None:
-    #print( A
-    #print( F.card
+    #print A
+    #print F.card
     indx = AssignmentToIndex(A, F.card)
-    # print( indx.astype(int)
+    # print indx.astype(int)
   else:
     map = [0]*len(F.var)
     for i in range(int(len(F.var))):
@@ -262,9 +262,9 @@ def ComputeJointDistribution(F):
   Joint = Factor()
   # Check for empty factor list
   if F == []:
-    print( 'Error: empty factor list')
+    print 'Error: empty factor list'
   elif len(F) == 1:
-    print( 'Error: only one factor')
+    print 'Error: only one factor'
   else:
     F.reverse()
     Joint = FactorProduct(F[0],F[1])
@@ -313,7 +313,7 @@ def ComputeMarginal(V, F, E):
 
 def RenormalizeFactor(F):
   if F.val == np.array([]):
-    print( 'Error: Factor is empty')
+    print 'Error: Factor is empty'
   else:
     if np.sum(F.val) != 1:
       sum = np.sum(F.val)

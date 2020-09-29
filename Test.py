@@ -4,7 +4,24 @@
 # import pybn library
 from pybn import *
 
-  # Define a main() function.
+def get_probabilities_by_component(name):
+  """
+    Make possible get value of probabilities by system component 
+    
+    Parameters
+    ----------
+    name : string
+      Name of device which probabilities what want to get.
+  """
+  return_list = []
+
+  with open ("BayesianDataForEngineComponents\\" + str(name) + ".txt") as myfile:
+    for line in myfile:
+      for number in line.split(','):
+        if number.replace('.','',1).isdigit():
+          return_list.append(float(number))
+  return return_list
+
 def main():
 
   # Create a Network
@@ -129,196 +146,38 @@ def main():
   Injectors.setProbabilities([0.99,0.01])
   Fuel_priming_pump.setProbabilities([0.99,0.01])
 
-  Elevated_fuel_consumption.setProbabilities([
-    0, 1,	
-    0.9, 0.1,	
-    0.2, 0.8,	
-    0.99, 0.01,	
-    0.5, 0.5,
-    0.99, 0.01,
-    0.99, 0.01,	
-    0.99,	0.01,	
-    0.2, 0.8,	
-    0.99,	0.01,
-    0.99,	0.01,
-    0.99,	0.01,
-    0.99,	0.01,
-    0.99,	0.01,
-    0.99,	0.01,
-    0.99,	0.01,
-    ])
-
-  Unstable_engine_operation.setProbabilities([
-    0.01, 0.99,	
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.99,	0.01,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    ])
-
-  Difficult_engine_starting.setProbabilities([
-    0.01, 0.99,	
-    0.2, 0.8,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.05,	0.95,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    ])
-
-  Drop_in_engine_power.setProbabilities([
-    0.01, 0.99,	
-    0.01, 0.99,
-    0.1, 0.9,
-    0.01, 0.99,
-    0.2, 0.8,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.15,	0.85,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    ])
-
-  Increase_in_engine_smoke.setProbabilities([
-    0.01, 0.99,	
-    0.3, 0.7,
-    0.2, 0.8,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.2,	0.8,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    ])
-
-  Appearance_of_oil_emulsion_in_engine_coolant.setProbabilities([
-    0.01, 0.99,	
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.2,	0.8,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    ])
-
-  Increased_engine_noise.setProbabilities([
-    0.01, 0.99,	
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.1, 0.9,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    ])
-
-  When_engine_speed_rises_dips_occur.setProbabilities([
-    0.01, 0.99,	
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.2, 0.8,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    ])
-
-  Fuel_leak.setProbabilities([
-    0.01, 0.99,	
-    0.2, 0.8,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    ])
 
 
-  When_car_is_running_engine_starts_to_triple.setProbabilities([
-    0.01, 0.99,	
-    0.01, 0.99,
-    0.2, 0.8,
-    0.01, 0.99,
-    0.1, 0.9,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    0.01, 0.99,
-    ])
+  Elevated_fuel_consumption.setProbabilities(
+    get_probabilities_by_component("Elevated_fuel_consumption"))
+
+  Unstable_engine_operation.setProbabilities(
+    get_probabilities_by_component("Unstable_engine_operation"))
+
+  Difficult_engine_starting.setProbabilities(
+    get_probabilities_by_component("Difficult_engine_starting"))
+
+  Drop_in_engine_power.setProbabilities(
+    get_probabilities_by_component("Drop_in_engine_power"))
+
+  Increase_in_engine_smoke.setProbabilities(
+    get_probabilities_by_component("Increase_in_engine_smoke"))
+
+  Appearance_of_oil_emulsion_in_engine_coolant.setProbabilities(
+    get_probabilities_by_component("Appearance_of_oil_emulsion_in_engine_coolant"))
+
+  Increased_engine_noise.setProbabilities(
+    get_probabilities_by_component("Increased_engine_noise"))
+
+  When_engine_speed_rises_dips_occur.setProbabilities(
+    get_probabilities_by_component("When_engine_speed_rises_dips_occur"))
+
+  Fuel_leak.setProbabilities(
+    get_probabilities_by_component("Fuel_leak"))
+
+
+  When_car_is_running_engine_starts_to_triple.setProbabilities(
+    get_probabilities_by_component("When_car_is_running_engine_starts_to_triple"))
 
   # Changing the nodes spacial and visual attributes:
   High_pressure_pump.setNodePosition(100,10)
@@ -363,7 +222,7 @@ def main():
 
   # Set evidence
   #net.setEvidence('Increased_engine_noise', 1)
-  net.setEvidence('When_car_is_running_engine_starts_to_triple', 1)
+  net.setEvidence('Difficult_engine_starting', 1)
   
   #net.setEvidence('Fuel_filter', 1)
   # Compute the beliefs for the network

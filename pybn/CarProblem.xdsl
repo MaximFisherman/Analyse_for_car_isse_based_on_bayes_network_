@@ -41,7 +41,7 @@
 			<!-- add arcs -->
 			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
 			<!-- setting probabilities -->
-			<probabilities>0 1 0.9 0.1 0.2 0.8 0.99 0.01 0.5 0.5 0.99 0.01 0.99 0.01 0.99 0.01 0.2 0.8 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 </probabilities>
+			<probabilities>0.0 1.0 0.9 0.1 0.2 0.8 0.99 0.01 0.5 0.5 0.99 0.01 0.99 0.01 0.99 0.01 0.2 0.8 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 </probabilities>
 		</cpt>
 		<!-- create node "Unstable_engine_operation" -->
 		<cpt id="Unstable_engine_operation" >

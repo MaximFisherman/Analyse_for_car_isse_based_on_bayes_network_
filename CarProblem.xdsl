@@ -4,34 +4,34 @@
 		<!-- create node "High_pressure_pump" -->
 		<cpt id="High_pressure_pump" >
 			<!-- setting names of outcomes -->
-			<state id="yes" />
-			<state id="no" />
+			<state id="work" />
+			<state id="not_work" />
 			<!-- setting probabilities -->
-			<probabilities>0.8 0.2 </probabilities>
+			<probabilities>0.99 0.01 </probabilities>
 		</cpt>
 		<!-- create node "Fuel_filter" -->
 		<cpt id="Fuel_filter" >
 			<!-- setting names of outcomes -->
-			<state id="yes" />
-			<state id="no" />
+			<state id="work" />
+			<state id="not_work" />
 			<!-- setting probabilities -->
-			<probabilities>0.5 0.5 </probabilities>
+			<probabilities>0.99 0.01 </probabilities>
 		</cpt>
 		<!-- create node "Injectors" -->
 		<cpt id="Injectors" >
 			<!-- setting names of outcomes -->
-			<state id="yes" />
-			<state id="no" />
+			<state id="work" />
+			<state id="not_work" />
 			<!-- setting probabilities -->
-			<probabilities>0.8 0.2 </probabilities>
+			<probabilities>0.99 0.01 </probabilities>
 		</cpt>
 		<!-- create node "Fuel_priming_pump" -->
 		<cpt id="Fuel_priming_pump" >
 			<!-- setting names of outcomes -->
-			<state id="yes" />
-			<state id="no" />
+			<state id="work" />
+			<state id="not_work" />
 			<!-- setting probabilities -->
-			<probabilities>0.9 0.1 </probabilities>
+			<probabilities>0.99 0.01 </probabilities>
 		</cpt>
 		<!-- create node "Elevated_fuel_consumption" -->
 		<cpt id="Elevated_fuel_consumption" >
@@ -41,7 +41,97 @@
 			<!-- add arcs -->
 			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
 			<!-- setting probabilities -->
-			<probabilities>0.0 1 0.0 1 0.0 1 0.0 1 0.0 1 0.0 1 0.0 1 0.0 1 0.0 1 0.0 1 0.0 1 0.0 1 0.0 1 0.0 1 0.0 1 0.0 1 </probabilities>
+			<probabilities>0.0 1.0 0.9 0.1 0.2 0.8 0.99 0.01 0.5 0.5 0.99 0.01 0.99 0.01 0.99 0.01 0.2 0.8 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Unstable_engine_operation" -->
+		<cpt id="Unstable_engine_operation" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.99 0.01 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Difficult_engine_starting" -->
+		<cpt id="Difficult_engine_starting" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.05 0.95 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Drop_in_engine_power" -->
+		<cpt id="Drop_in_engine_power" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.01 0.99 0.1 0.9 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.15 0.85 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Increase_in_engine_smoke" -->
+		<cpt id="Increase_in_engine_smoke" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.3 0.7 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Appearance_of_oil_emulsion_in_engine_coolant" -->
+		<cpt id="Appearance_of_oil_emulsion_in_engine_coolant" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Increased_engine_noise" -->
+		<cpt id="Increased_engine_noise" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "When_engine_speed_rises_dips_occur" -->
+		<cpt id="When_engine_speed_rises_dips_occur" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Fuel_leak" -->
+		<cpt id="Fuel_leak" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "When_car_is_running_engine_starts_to_triple" -->
+		<cpt id="When_car_is_running_engine_starts_to_triple" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
 		</cpt>
 	</nodes>
 	<extensions>
@@ -84,6 +174,78 @@
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
 				<position>500 150 625 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Unstable_engine_operation">
+				<name>Unstable_engine_operation</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>700 150 825 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Difficult_engine_starting">
+				<name>Difficult_engine_starting</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>900 150 1025 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Drop_in_engine_power">
+				<name>Drop_in_engine_power</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1000 150 1125 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Increase_in_engine_smoke">
+				<name>Increase_in_engine_smoke</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1150 150 1275 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Appearance_of_oil_emulsion_in_engine_coolant">
+				<name>Appearance_of_oil_emulsion_in_engine_coolant</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1300 150 1425 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Increased_engine_noise">
+				<name>Increased_engine_noise</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1450 150 1575 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="When_engine_speed_rises_dips_occur">
+				<name>When_engine_speed_rises_dips_occur</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1600 150 1725 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Fuel_leak">
+				<name>Fuel_leak</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1750 150 1875 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="When_car_is_running_engine_starts_to_triple">
+				<name>When_car_is_running_engine_starts_to_triple</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1900 150 2025 215</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 		</genie>
