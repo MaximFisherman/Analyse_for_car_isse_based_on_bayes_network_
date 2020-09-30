@@ -33,6 +33,78 @@
 			<!-- setting probabilities -->
 			<probabilities>0.99 0.01 </probabilities>
 		</cpt>
+		<!-- create node "Oil_pump" -->
+		<cpt id="Oil_pump" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Oil_filter" -->
+		<cpt id="Oil_filter" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Engine_oil" -->
+		<cpt id="Engine_oil" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Cooling_fan" -->
+		<cpt id="Cooling_fan" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Coolant_pump" -->
+		<cpt id="Coolant_pump" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Radiator" -->
+		<cpt id="Radiator" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Radiator_cap" -->
+		<cpt id="Radiator_cap" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Expansion_tank" -->
+		<cpt id="Expansion_tank" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Thermostat" -->
+		<cpt id="Thermostat" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
 		<!-- create node "Elevated_fuel_consumption" -->
 		<cpt id="Elevated_fuel_consumption" >
 			<!-- setting names of outcomes -->
@@ -99,9 +171,9 @@
 			<state id="yes" />
 			<state id="no" />
 			<!-- add arcs -->
-			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump Engine_oil </parents>
 			<!-- setting probabilities -->
-			<probabilities>0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+			<probabilities>0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
 		</cpt>
 		<!-- create node "When_engine_speed_rises_dips_occur" -->
 		<cpt id="When_engine_speed_rises_dips_occur" >
@@ -133,6 +205,116 @@
 			<!-- setting probabilities -->
 			<probabilities>0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
 		</cpt>
+		<!-- create node "Oil_can_on_dashboard_lights_up" -->
+		<cpt id="Oil_can_on_dashboard_lights_up" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Oil_pump Oil_filter Engine_oil </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.1 0.9 0.1 0.9 0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Oil_pressure_increase" -->
+		<cpt id="Oil_pressure_increase" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Oil_pump Oil_filter Engine_oil </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.8 0.2 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Increased_oil_consumption" -->
+		<cpt id="Increased_oil_consumption" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Oil_pump Oil_filter Engine_oil </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.6 0.4 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Engine_overheating" -->
+		<cpt id="Engine_overheating" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Oil_filter </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.1 0.9 </probabilities>
+		</cpt>
+		<!-- create node "Physical_damage_to_filter" -->
+		<cpt id="Physical_damage_to_filter" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Oil_pump Oil_filter Engine_oil </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.01 0.99 1.0 0.0 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Oil_turns_black" -->
+		<cpt id="Oil_turns_black" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Oil_pump Oil_filter Engine_oil </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.99 0.01 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Low_oil_level" -->
+		<cpt id="Low_oil_level" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Oil_pump Oil_filter Engine_oil </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.7 0.3 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Cooling_fan_does_not_turn_on" -->
+		<cpt id="Cooling_fan_does_not_turn_on" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Cooling_fan Thermostat </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.5 0.5 0.5 0.5 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Cooling_fan_does_not_turn_off" -->
+		<cpt id="Cooling_fan_does_not_turn_off" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Cooling_fan Thermostat </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.5 0.5 0.5 0.5 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Cooling_fan_external_damage" -->
+		<cpt id="Cooling_fan_external_damage" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Cooling_fan Thermostat </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.01 0.99 0.99 0.01 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Cooling_pump_pulley_play" -->
+		<cpt id="Cooling_pump_pulley_play" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Coolant_pump </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.6 0.4 </probabilities>
+		</cpt>
 	</nodes>
 	<extensions>
 		<genie version="1.0" app="py2GeNIe 2013" name="CarProblem" faultnameformat="nodestate">
@@ -154,7 +336,7 @@
 			</node>
 			<node id="Injectors">
 				<name>Injectors</name>
-				<interior color="ff0011" />
+				<interior color="e5f6f7" />
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
 				<position>300 150 425 215</position>
@@ -162,10 +344,82 @@
 			</node>
 			<node id="Fuel_priming_pump">
 				<name>Fuel_priming_pump</name>
-				<interior color="ff0000" />
+				<interior color="e5f6f7" />
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
 				<position>200 150 325 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Oil_pump">
+				<name>Oil_pump</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>350 150 475 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Oil_filter">
+				<name>Oil_filter</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>450 150 575 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Engine_oil">
+				<name>Engine_oil</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>600 150 725 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Cooling_fan">
+				<name>Cooling_fan</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>750 150 875 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Coolant_pump">
+				<name>Coolant_pump</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>900 150 1025 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Radiator">
+				<name>Radiator</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1200 150 1325 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Radiator_cap">
+				<name>Radiator_cap</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1350 150 1475 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Expansion_tank">
+				<name>Expansion_tank</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1450 150 1575 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Thermostat">
+				<name>Thermostat</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1600 150 1725 215</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 			<node id="Elevated_fuel_consumption">
@@ -173,7 +427,7 @@
 				<interior color="e5f6f7" />
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
-				<position>500 150 625 215</position>
+				<position>500 350 625 415</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 			<node id="Unstable_engine_operation">
@@ -181,7 +435,7 @@
 				<interior color="e5f6f7" />
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
-				<position>700 150 825 215</position>
+				<position>700 350 825 415</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 			<node id="Difficult_engine_starting">
@@ -189,7 +443,7 @@
 				<interior color="e5f6f7" />
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
-				<position>900 150 1025 215</position>
+				<position>900 350 1025 415</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 			<node id="Drop_in_engine_power">
@@ -197,7 +451,7 @@
 				<interior color="e5f6f7" />
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
-				<position>1000 150 1125 215</position>
+				<position>1000 350 1125 415</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 			<node id="Increase_in_engine_smoke">
@@ -205,7 +459,7 @@
 				<interior color="e5f6f7" />
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
-				<position>1150 150 1275 215</position>
+				<position>1150 350 1275 415</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 			<node id="Appearance_of_oil_emulsion_in_engine_coolant">
@@ -213,7 +467,7 @@
 				<interior color="e5f6f7" />
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
-				<position>1300 150 1425 215</position>
+				<position>1300 350 1425 415</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 			<node id="Increased_engine_noise">
@@ -221,7 +475,7 @@
 				<interior color="e5f6f7" />
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
-				<position>1450 150 1575 215</position>
+				<position>1450 350 1575 415</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 			<node id="When_engine_speed_rises_dips_occur">
@@ -229,7 +483,7 @@
 				<interior color="e5f6f7" />
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
-				<position>1600 150 1725 215</position>
+				<position>1600 350 1725 415</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 			<node id="Fuel_leak">
@@ -237,7 +491,7 @@
 				<interior color="e5f6f7" />
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
-				<position>1750 150 1875 215</position>
+				<position>1750 350 1875 415</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 			<node id="When_car_is_running_engine_starts_to_triple">
@@ -245,7 +499,95 @@
 				<interior color="e5f6f7" />
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
-				<position>1900 150 2025 215</position>
+				<position>1900 350 2025 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Oil_can_on_dashboard_lights_up">
+				<name>Oil_can_on_dashboard_lights_up</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>2050 350 2175 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Oil_pressure_increase">
+				<name>Oil_pressure_increase</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>2200 350 2325 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Increased_oil_consumption">
+				<name>Increased_oil_consumption</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>2350 350 2475 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Engine_overheating">
+				<name>Engine_overheating</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>2500 350 2625 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Physical_damage_to_filter">
+				<name>Physical_damage_to_filter</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>2650 350 2775 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Oil_turns_black">
+				<name>Oil_turns_black</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>2800 350 2925 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Low_oil_level">
+				<name>Low_oil_level</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>3000 350 3125 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Cooling_fan_does_not_turn_on">
+				<name>Cooling_fan_does_not_turn_on</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>3150 350 3275 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Cooling_fan_does_not_turn_off">
+				<name>Cooling_fan_does_not_turn_off</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>3300 350 3425 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Cooling_fan_external_damage">
+				<name>Cooling_fan_external_damage</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>3450 350 3575 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Cooling_pump_pulley_play">
+				<name>Cooling_pump_pulley_play</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>3700 350 3825 415</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 		</genie>
