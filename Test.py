@@ -69,7 +69,6 @@ def main():
   
   Thermostat = Node('Thermostat') # (Термостат)
   Thermostat.addOutcomes(['work','not_work'])
-
 ##################################Simptoms#######################################
   Elevated_fuel_consumption = Node('Elevated_fuel_consumption') # (Повышенный расход топлива)
   Elevated_fuel_consumption.addOutcomes(['yes','no'])
@@ -135,6 +134,39 @@ def main():
 
   Cooling_pump_pulley_play = Node('Cooling_pump_pulley_play') # (Насос системы охлаждения)
   Cooling_pump_pulley_play.addOutcomes(['yes','no'])
+
+  Antifreeze_leakage_under_car = Node('Antifreeze_leakage_under_car') # (Появление течи антифриза под автомобилем)
+  Antifreeze_leakage_under_car.addOutcomes(['yes','no'])
+
+  Appearance_of_pungent_smell_of_antifreeze_in_car = Node('Appearance_of_pungent_smell_of_antifreeze_in_car') # (Появление в салоне автомобиля резкого запаха антифриза)
+  Appearance_of_pungent_smell_of_antifreeze_in_car.addOutcomes(['yes','no'])
+
+  Interior_heating_problems = Node('Interior_heating_problems') # (Проблемы с обогревом салона)
+  Interior_heating_problems.addOutcomes(['yes','no'])
+  
+  Damaged_cylinder_head_gasket = Node('Damaged_cylinder_head_gasket') # (Повреждение прокладки головки блока цилиндров)
+  Damaged_cylinder_head_gasket.addOutcomes(['yes','no'])
+
+  Relief_valve_plunger_sticking = Node('Relief_valve_plunger_sticking') # (Плунжер перепускного клапана заедает)
+  Relief_valve_plunger_sticking.addOutcomes(['work','not_work'])
+
+  Loose_radiator_cap_spring = Node('Loose_radiator_cap_spring') # (Ослабление пружины крышки радиатора)
+  Loose_radiator_cap_spring.addOutcomes(['work','not_work'])
+  
+  Smoke_from_under_hood = Node('Smoke_from_under_hood') # (Дым из-под капота)
+  Smoke_from_under_hood.addOutcomes(['work','not_work'])
+
+  White_steam_from_muffler = Node('White_steam_from_muffler') # (Белый пар из глушителя)
+  White_steam_from_muffler.addOutcomes(['work','not_work'])
+
+  Fan_turns_on_ahead_of_time = Node('Fan_turns_on_ahead_of_time') # (Вентилятор охлаждения включается раньше времени)
+  Fan_turns_on_ahead_of_time.addOutcomes(['work','not_work'])
+
+  Engine_takes_long_time_to_reach_operating_temperature = Node('Engine_takes_long_time_to_reach_operating_temperature') # (Двигатель долго нагреваеться до робочей температуры)
+  Engine_takes_long_time_to_reach_operating_temperature.addOutcomes(['work','not_work'])
+
+  Fluctuations_in_engine_temperature_while_driving = Node('Fluctuations_in_engine_temperature_while_driving') # (Колебания температуры двигателя при движении)
+  Fluctuations_in_engine_temperature_while_driving.addOutcomes(['work','not_work'])
 ###################################################################################################
   # Add arc to 'Elevated_fuel_consumption'
   arc_High_pressure_pump__Elevated_fuel_consumption = Arc(High_pressure_pump, Elevated_fuel_consumption)
@@ -256,6 +288,40 @@ def main():
   
   # Add arc Cooling_pump_pulley_play
   arc_Cooling_fan__Cooling_pump_pulley_play = Arc(Coolant_pump, Cooling_pump_pulley_play)
+
+  # Add arc Antifreeze_leakage_under_car
+  arc_Cooling_fan__Antifreeze_leakage_under_car = Arc(Coolant_pump, Antifreeze_leakage_under_car)
+  arc_Radiator__Antifreeze_leakage_under_car = Arc(Radiator, Antifreeze_leakage_under_car)
+
+  # Add arc Appearance_of_pungent_smell_of_antifreeze_in_car
+  arc_Cooling_fan__Appearance_of_pungent_smell_of_antifreeze_in_car = Arc(Coolant_pump, Appearance_of_pungent_smell_of_antifreeze_in_car)
+  
+  # Add arc Interior_heating_problems
+  arc_Radiator__Interior_heating_problems = Arc(Radiator, Interior_heating_problems)
+  
+  # Add arc Damaged_cylinder_head_gasket
+  arc_Radiator__Damaged_cylinder_head_gasket = Arc(Radiator, Damaged_cylinder_head_gasket)
+
+  # Add arc Relief_valve_plunger_sticking
+  arc_Radiator_cap__Relief_valve_plunger_sticking = Arc(Radiator_cap, Relief_valve_plunger_sticking)
+  
+  # Add arc Relief_valve_plunger_sticking
+  arc_Radiator_cap__Loose_radiator_cap_spring = Arc(Radiator_cap, Loose_radiator_cap_spring)
+  
+  # Add arc Relief_valve_plunger_sticking
+  arc_Expansion_tank__Smoke_from_under_hood = Arc(Expansion_tank, Smoke_from_under_hood)
+
+  # Add arc White_steam_from_muffler
+  arc_Expansion_tank__White_steam_from_muffler = Arc(Expansion_tank, White_steam_from_muffler)
+  
+  # Add arc Fan_turns_on_ahead_of_time
+  arc_Thermostat__Fan_turns_on_ahead_of_time = Arc(Thermostat, Fan_turns_on_ahead_of_time)
+
+  # Add arc Engine_takes_long_time_to_reach_operating_temperature
+  arc_Thermostat__Engine_takes_long_time_to_reach_operating_temperature = Arc(Thermostat, Engine_takes_long_time_to_reach_operating_temperature)
+  
+  # Add arc Engine_takes_long_time_to_reach_operating_temperature
+  arc_Thermostat__Fluctuations_in_engine_temperature_while_driving = Arc(Thermostat, Fluctuations_in_engine_temperature_while_driving)
 #########################################Set probabilities################################################
   High_pressure_pump.setProbabilities([0.99,0.01])
   Fuel_filter.setProbabilities([0.99,0.01])
@@ -335,6 +401,39 @@ def main():
   Cooling_pump_pulley_play.setProbabilities(
     get_probabilities_by_component("Cooling_pump_pulley_play"))
 
+  Antifreeze_leakage_under_car.setProbabilities(
+    get_probabilities_by_component("Antifreeze_leakage_under_car"))
+
+  Appearance_of_pungent_smell_of_antifreeze_in_car.setProbabilities(
+    get_probabilities_by_component("Appearance_of_pungent_smell_of_antifreeze_in_car"))
+
+  Interior_heating_problems.setProbabilities(
+    get_probabilities_by_component("Interior_heating_problems"))
+
+  Damaged_cylinder_head_gasket.setProbabilities(
+    get_probabilities_by_component("Interior_heating_problems"))
+
+  Relief_valve_plunger_sticking.setProbabilities(
+    get_probabilities_by_component("Relief_valve_plunger_sticking"))
+
+  Loose_radiator_cap_spring.setProbabilities(
+    get_probabilities_by_component("Loose_radiator_cap_spring"))
+
+  Smoke_from_under_hood.setProbabilities(
+    get_probabilities_by_component("Smoke_from_under_hood"))
+
+  White_steam_from_muffler.setProbabilities(
+    get_probabilities_by_component("White_steam_from_muffler"))
+
+  Fan_turns_on_ahead_of_time.setProbabilities(
+    get_probabilities_by_component("Fan_turns_on_ahead_of_time"))
+
+  Engine_takes_long_time_to_reach_operating_temperature.setProbabilities(
+    get_probabilities_by_component("Fan_turns_on_ahead_of_time"))
+
+  Fluctuations_in_engine_temperature_while_driving.setProbabilities(
+    get_probabilities_by_component("Fluctuations_in_engine_temperature_while_driving"))
+
   # Changing the nodes spacial and visual attributes:
   High_pressure_pump.setNodePosition(100,10)
   Fuel_filter.setNodePosition(300,10)
@@ -372,6 +471,17 @@ def main():
   Cooling_fan_does_not_turn_off.setNodePosition(3300,350)
   Cooling_fan_external_damage.setNodePosition(3450,350)
   Cooling_pump_pulley_play.setNodePosition(3700,350)
+  Antifreeze_leakage_under_car.setNodePosition(3950,350)
+  Appearance_of_pungent_smell_of_antifreeze_in_car.setNodePosition(4100,350)
+  Interior_heating_problems.setNodePosition(4250,350)
+  Damaged_cylinder_head_gasket.setNodePosition(4400,350)
+  Relief_valve_plunger_sticking.setNodePosition(4550,350)
+  Loose_radiator_cap_spring.setNodePosition(4700,350)
+  Smoke_from_under_hood.setNodePosition(4850,350)
+  White_steam_from_muffler.setNodePosition(5000,350)
+  Fan_turns_on_ahead_of_time.setNodePosition(5150,350)
+  Engine_takes_long_time_to_reach_operating_temperature.setNodePosition(5300,350)
+  Fluctuations_in_engine_temperature_while_driving.setNodePosition(5450,350)
 
   # Add notes to network
   net.addNodes([High_pressure_pump, Fuel_filter,
@@ -384,14 +494,18 @@ def main():
                 Oil_can_on_dashboard_lights_up, Oil_pressure_increase, Increased_oil_consumption,
                 Engine_overheating, Physical_damage_to_filter, Oil_turns_black, Low_oil_level, 
                 Cooling_fan_does_not_turn_on, Cooling_fan_does_not_turn_off, Cooling_fan_external_damage,
-                Cooling_pump_pulley_play])
+                Cooling_pump_pulley_play, Antifreeze_leakage_under_car, Appearance_of_pungent_smell_of_antifreeze_in_car,
+                Interior_heating_problems, Damaged_cylinder_head_gasket, Relief_valve_plunger_sticking, 
+                Loose_radiator_cap_spring, Smoke_from_under_hood, White_steam_from_muffler, Fan_turns_on_ahead_of_time,
+                Engine_takes_long_time_to_reach_operating_temperature, Fluctuations_in_engine_temperature_while_driving,
+                ])
 
   # Write file
   net.writeFile('CarProblem.xdsl')
 
   # Set evidence
-  #net.setEvidence('Oil_can_on_dashboard_lights_up', 1)
-  net.setEvidence('Cooling_pump_pulley_play', 1)
+  net.setEvidence('Cooling_fan_does_not_turn_on', 1)
+  net.setEvidence('Fluctuations_in_engine_temperature_while_driving', 1)
   
   #net.setEvidence('Fuel_filter', 1)
 
@@ -426,21 +540,33 @@ def main():
   print('Fuel_leak', Fuel_leak.getBeliefs())
   print('When_car_is_running_engine_starts_to_triple', When_car_is_running_engine_starts_to_triple.getBeliefs())
   print('__________________________')
-  print('Oil_can_on_dashboard_lights_up', Oil_can_on_dashboard_lights_up.getBeliefs())
-  print('Oil_pressure_increase', Oil_pressure_increase.getBeliefs())
-  print('Increased_oil_consumption', Increased_oil_consumption.getBeliefs())
-  print('Engine_overheating', Engine_overheating.getBeliefs())
-  print('Physical_damage_to_filter', Physical_damage_to_filter.getBeliefs())
-  print('Oil_turns_black', Oil_turns_black.getBeliefs())
-  print('Low_oil_level', Low_oil_level.getBeliefs())
+  # print('Oil_can_on_dashboard_lights_up', Oil_can_on_dashboard_lights_up.getBeliefs())
+  # print('Oil_pressure_increase', Oil_pressure_increase.getBeliefs())
+  # print('Increased_oil_consumption', Increased_oil_consumption.getBeliefs())
+  # print('Engine_overheating', Engine_overheating.getBeliefs())
+  # print('Physical_damage_to_filter', Physical_damage_to_filter.getBeliefs())
+  # print('Oil_turns_black', Oil_turns_black.getBeliefs())
+  # print('Low_oil_level', Low_oil_level.getBeliefs())
   print('__________________________')
   print('Cooling_fan_does_not_turn_on', Cooling_fan_does_not_turn_on.getBeliefs())
   print('Cooling_fan_does_not_turn_off', Cooling_fan_does_not_turn_off.getBeliefs())
   print('Cooling_fan_external_damage', Cooling_fan_external_damage.getBeliefs())
   print('Cooling_pump_pulley_play', Cooling_pump_pulley_play.getBeliefs())
+  print('Antifreeze_leakage_under_car', Antifreeze_leakage_under_car.getBeliefs())
+  print('Appearance_of_pungent_smell_of_antifreeze_in_car', Appearance_of_pungent_smell_of_antifreeze_in_car.getBeliefs())
+  print('Interior_heating_problems', Interior_heating_problems.getBeliefs())
+  print('Damaged_cylinder_head_gasket', Damaged_cylinder_head_gasket.getBeliefs())
+  print('Relief_valve_plunger_sticking', Relief_valve_plunger_sticking.getBeliefs())
+  print('Loose_radiator_cap_spring', Loose_radiator_cap_spring.getBeliefs())
+  print('Smoke_from_under_hood', Smoke_from_under_hood.getBeliefs())
+  print('White_steam_from_muffler', White_steam_from_muffler.getBeliefs())
+  print('Fan_turns_on_ahead_of_time', Fan_turns_on_ahead_of_time.getBeliefs())
+  print('Engine_takes_long_time_to_reach_operating_temperature', Engine_takes_long_time_to_reach_operating_temperature.getBeliefs())
+  print('Fluctuations_in_engine_temperature_while_driving', Fluctuations_in_engine_temperature_while_driving.getBeliefs())
+  
 
-
-  # This is the standard boilerplate that calls the main() function.
+  
+# This is the standard boilerplate that calls the main() function.
 if __name__ == '__main__':
   main()
 

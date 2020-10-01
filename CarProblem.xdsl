@@ -315,6 +315,116 @@
 			<!-- setting probabilities -->
 			<probabilities>0.01 0.99 0.6 0.4 </probabilities>
 		</cpt>
+		<!-- create node "Antifreeze_leakage_under_car" -->
+		<cpt id="Antifreeze_leakage_under_car" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Coolant_pump Radiator </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.1 0.9 0.1 0.9 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Appearance_of_pungent_smell_of_antifreeze_in_car" -->
+		<cpt id="Appearance_of_pungent_smell_of_antifreeze_in_car" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Coolant_pump </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.1 0.9 </probabilities>
+		</cpt>
+		<!-- create node "Interior_heating_problems" -->
+		<cpt id="Interior_heating_problems" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Radiator </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.2 0.8 </probabilities>
+		</cpt>
+		<!-- create node "Damaged_cylinder_head_gasket" -->
+		<cpt id="Damaged_cylinder_head_gasket" >
+			<!-- setting names of outcomes -->
+			<state id="yes" />
+			<state id="no" />
+			<!-- add arcs -->
+			<parents>Radiator </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.2 0.8 </probabilities>
+		</cpt>
+		<!-- create node "Relief_valve_plunger_sticking" -->
+		<cpt id="Relief_valve_plunger_sticking" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Radiator_cap </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Loose_radiator_cap_spring" -->
+		<cpt id="Loose_radiator_cap_spring" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Radiator_cap </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Smoke_from_under_hood" -->
+		<cpt id="Smoke_from_under_hood" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Expansion_tank </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.2 0.08 </probabilities>
+		</cpt>
+		<!-- create node "White_steam_from_muffler" -->
+		<cpt id="White_steam_from_muffler" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Expansion_tank </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.4 0.6 </probabilities>
+		</cpt>
+		<!-- create node "Fan_turns_on_ahead_of_time" -->
+		<cpt id="Fan_turns_on_ahead_of_time" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Thermostat </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.9 0.1 </probabilities>
+		</cpt>
+		<!-- create node "Engine_takes_long_time_to_reach_operating_temperature" -->
+		<cpt id="Engine_takes_long_time_to_reach_operating_temperature" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Thermostat </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.9 0.1 </probabilities>
+		</cpt>
+		<!-- create node "Fluctuations_in_engine_temperature_while_driving" -->
+		<cpt id="Fluctuations_in_engine_temperature_while_driving" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Thermostat </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.99 0.01 </probabilities>
+		</cpt>
 	</nodes>
 	<extensions>
 		<genie version="1.0" app="py2GeNIe 2013" name="CarProblem" faultnameformat="nodestate">
@@ -588,6 +698,94 @@
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
 				<position>3700 350 3825 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Antifreeze_leakage_under_car">
+				<name>Antifreeze_leakage_under_car</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>3950 350 4075 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Appearance_of_pungent_smell_of_antifreeze_in_car">
+				<name>Appearance_of_pungent_smell_of_antifreeze_in_car</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>4100 350 4225 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Interior_heating_problems">
+				<name>Interior_heating_problems</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>4250 350 4375 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Damaged_cylinder_head_gasket">
+				<name>Damaged_cylinder_head_gasket</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>4400 350 4525 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Relief_valve_plunger_sticking">
+				<name>Relief_valve_plunger_sticking</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>4550 350 4675 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Loose_radiator_cap_spring">
+				<name>Loose_radiator_cap_spring</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>4700 350 4825 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Smoke_from_under_hood">
+				<name>Smoke_from_under_hood</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>4850 350 4975 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="White_steam_from_muffler">
+				<name>White_steam_from_muffler</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>5000 350 5125 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Fan_turns_on_ahead_of_time">
+				<name>Fan_turns_on_ahead_of_time</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>5150 350 5275 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Engine_takes_long_time_to_reach_operating_temperature">
+				<name>Engine_takes_long_time_to_reach_operating_temperature</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>5300 350 5425 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Fluctuations_in_engine_temperature_while_driving">
+				<name>Fluctuations_in_engine_temperature_while_driving</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>5450 350 5575 415</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 		</genie>
