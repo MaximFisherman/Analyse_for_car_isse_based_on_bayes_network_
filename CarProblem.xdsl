@@ -105,15 +105,95 @@
 			<!-- setting probabilities -->
 			<probabilities>0.99 0.01 </probabilities>
 		</cpt>
+		<!-- create node "Pistons" -->
+		<cpt id="Pistons" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Connecting_rod" -->
+		<cpt id="Connecting_rod" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Crankshaft" -->
+		<cpt id="Crankshaft" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Flywheel" -->
+		<cpt id="Flywheel" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Engine_block" -->
+		<cpt id="Engine_block" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Cylinder_head" -->
+		<cpt id="Cylinder_head" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Valve" -->
+		<cpt id="Valve" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Valve_drive" -->
+		<cpt id="Valve_drive" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Camshaft" -->
+		<cpt id="Camshaft" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Shaft_drive" -->
+		<cpt id="Shaft_drive" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- setting probabilities -->
+			<probabilities>0.99 0.01 </probabilities>
+		</cpt>
 		<!-- create node "Elevated_fuel_consumption" -->
 		<cpt id="Elevated_fuel_consumption" >
 			<!-- setting names of outcomes -->
 			<state id="yes" />
 			<state id="no" />
 			<!-- add arcs -->
-			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump Pistons </parents>
 			<!-- setting probabilities -->
-			<probabilities>0.0 1.0 0.9 0.1 0.2 0.8 0.99 0.01 0.5 0.5 0.99 0.01 0.99 0.01 0.99 0.01 0.2 0.8 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 </probabilities>
+			<probabilities>0.0 1.0 0.9 0.1 0.2 0.8 0.01 0.99 0.5 0.5 0.01 0.99 0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.3 0.7 0.9 0.1 0.2 0.8 0.01 0.99 0.5 0.5 0.01 0.99 0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
 		</cpt>
 		<!-- create node "Unstable_engine_operation" -->
 		<cpt id="Unstable_engine_operation" >
@@ -131,9 +211,9 @@
 			<state id="yes" />
 			<state id="no" />
 			<!-- add arcs -->
-			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<parents>High_pressure_pump Fuel_priming_pump Crankshaft Flywheel </parents>
 			<!-- setting probabilities -->
-			<probabilities>0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.05 0.95 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+			<probabilities>0.01 0.99 0.2 0.8 0.05 0.95 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
 		</cpt>
 		<!-- create node "Drop_in_engine_power" -->
 		<cpt id="Drop_in_engine_power" >
@@ -141,9 +221,9 @@
 			<state id="yes" />
 			<state id="no" />
 			<!-- add arcs -->
-			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump Pistons Crankshaft Flywheel Valve Valve_drive Camshaft </parents>
 			<!-- setting probabilities -->
-			<probabilities>0.01 0.99 0.01 0.99 0.1 0.9 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.15 0.85 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+			<probabilities>0.01 0.99 0.01 0.99 0.1 0.9 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.15 0.85 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.5 0.5 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.6 0.4 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
 		</cpt>
 		<!-- create node "Increase_in_engine_smoke" -->
 		<cpt id="Increase_in_engine_smoke" >
@@ -151,9 +231,9 @@
 			<state id="yes" />
 			<state id="no" />
 			<!-- add arcs -->
-			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<parents>High_pressure_pump Injectors Fuel_priming_pump Pistons </parents>
 			<!-- setting probabilities -->
-			<probabilities>0.01 0.99 0.3 0.7 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+			<probabilities>0.01 0.99 0.3 0.7 0.2 0.8 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
 		</cpt>
 		<!-- create node "Appearance_of_oil_emulsion_in_engine_coolant" -->
 		<cpt id="Appearance_of_oil_emulsion_in_engine_coolant" >
@@ -171,9 +251,9 @@
 			<state id="yes" />
 			<state id="no" />
 			<!-- add arcs -->
-			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump Engine_oil </parents>
+			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump Engine_oil Crankshaft </parents>
 			<!-- setting probabilities -->
-			<probabilities>0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+			<probabilities>0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
 		</cpt>
 		<!-- create node "When_engine_speed_rises_dips_occur" -->
 		<cpt id="When_engine_speed_rises_dips_occur" >
@@ -181,9 +261,9 @@
 			<state id="yes" />
 			<state id="no" />
 			<!-- add arcs -->
-			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<parents>Fuel_filter Crankshaft Valve_drive Camshaft </parents>
 			<!-- setting probabilities -->
-			<probabilities>0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+			<probabilities>0.01 0.99 0.2 0.8 0.5 0.5 0.01 0.99 0.6 0.4 0.01 0.99 0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
 		</cpt>
 		<!-- create node "Fuel_leak" -->
 		<cpt id="Fuel_leak" >
@@ -201,9 +281,9 @@
 			<state id="yes" />
 			<state id="no" />
 			<!-- add arcs -->
-			<parents>High_pressure_pump Fuel_filter Injectors Fuel_priming_pump </parents>
+			<parents>Fuel_filter Injectors Cylinder_head Valve Valve_drive </parents>
 			<!-- setting probabilities -->
-			<probabilities>0.01 0.99 0.01 0.99 0.2 0.8 0.01 0.99 0.1 0.9 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+			<probabilities>0.01 0.99 0.2 0.8 0.1 0.9 0.4 0.6 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.8 0.2 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.8 0.2 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
 		</cpt>
 		<!-- create node "Oil_can_on_dashboard_lights_up" -->
 		<cpt id="Oil_can_on_dashboard_lights_up" >
@@ -231,9 +311,9 @@
 			<state id="yes" />
 			<state id="no" />
 			<!-- add arcs -->
-			<parents>Oil_pump Oil_filter Engine_oil </parents>
+			<parents>Oil_pump Pistons </parents>
 			<!-- setting probabilities -->
-			<probabilities>0.01 0.99 0.01 0.99 0.01 0.99 0.01 0.99 0.6 0.4 0.01 0.99 0.01 0.99 0.01 0.99 </probabilities>
+			<probabilities>0.01 0.99 0.2 0.8 0.6 0.4 0.01 0.99 </probabilities>
 		</cpt>
 		<!-- create node "Engine_overheating" -->
 		<cpt id="Engine_overheating" >
@@ -381,9 +461,9 @@
 			<state id="work" />
 			<state id="not_work" />
 			<!-- add arcs -->
-			<parents>Expansion_tank </parents>
+			<parents>Expansion_tank Cylinder_head </parents>
 			<!-- setting probabilities -->
-			<probabilities>0.01 0.99 0.2 0.08 </probabilities>
+			<probabilities>0.01 0.99 0.8 0.2 0.7 0.3 0.01 0.99 </probabilities>
 		</cpt>
 		<!-- create node "White_steam_from_muffler" -->
 		<cpt id="White_steam_from_muffler" >
@@ -422,6 +502,166 @@
 			<state id="not_work" />
 			<!-- add arcs -->
 			<parents>Thermostat </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Reduced_compression_in_cylinders" -->
+		<cpt id="Reduced_compression_in_cylinders" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Pistons </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Metallic_knock_is_heard_when_engine_is_running" -->
+		<cpt id="Metallic_knock_is_heard_when_engine_is_running" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Connecting_rod </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "No_idling" -->
+		<cpt id="No_idling" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Crankshaft </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.7 0.3 </probabilities>
+		</cpt>
+		<!-- create node "Gear_shift_stiffness" -->
+		<cpt id="Gear_shift_stiffness" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Flywheel </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.4 0.6 </probabilities>
+		</cpt>
+		<!-- create node "Vibration_when_pressing_clutch_pedal" -->
+		<cpt id="Vibration_when_pressing_clutch_pedal" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Flywheel </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Creaking_and_grinding_noise_at_startup" -->
+		<cpt id="Creaking_and_grinding_noise_at_startup" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Flywheel </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Physical_deformation_of_engine_block" -->
+		<cpt id="Physical_deformation_of_engine_block" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Engine_block </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Breakage_of_thread_of_fastening_cylinder_head" -->
+		<cpt id="Breakage_of_thread_of_fastening_cylinder_head" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Engine_block </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Leaks_in_area_of_cylinder_head_gasket" -->
+		<cpt id="Leaks_in_area_of_cylinder_head_gasket" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Cylinder_head Valve_drive </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.99 0.01 0.2 0.8 0.01 0.99 </probabilities>
+		</cpt>
+		<!-- create node "Reduced_compression_cylinders_block" -->
+		<cpt id="Reduced_compression_cylinders_block" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Cylinder_head </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.4 0.6 </probabilities>
+		</cpt>
+		<!-- create node "Antifreeze_traces_in_exhaust_system" -->
+		<cpt id="Antifreeze_traces_in_exhaust_system" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Cylinder_head </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.5 0.5 </probabilities>
+		</cpt>
+		<!-- create node "Pops_are_heard_in_exhaust_pipe" -->
+		<cpt id="Pops_are_heard_in_exhaust_pipe" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Valve </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.9 0.1 </probabilities>
+		</cpt>
+		<!-- create node "Exhaust_color_gray_black" -->
+		<cpt id="Exhaust_color_gray_black" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Valve_drive </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.6 0.4 </probabilities>
+		</cpt>
+		<!-- create node "Candle_deposits" -->
+		<cpt id="Candle_deposits" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Valve_drive </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.5 0.5 </probabilities>
+		</cpt>
+		<!-- create node "Leaking_in_camshaft_oil_seal_area" -->
+		<cpt id="Leaking_in_camshaft_oil_seal_area" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Valve_drive </parents>
+			<!-- setting probabilities -->
+			<probabilities>0.01 0.99 0.99 0.01 </probabilities>
+		</cpt>
+		<!-- create node "Timing_Belt_Problems" -->
+		<cpt id="Timing_Belt_Problems" >
+			<!-- setting names of outcomes -->
+			<state id="work" />
+			<state id="not_work" />
+			<!-- add arcs -->
+			<parents>Shaft_drive </parents>
 			<!-- setting probabilities -->
 			<probabilities>0.01 0.99 0.99 0.01 </probabilities>
 		</cpt>
@@ -530,6 +770,86 @@
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
 				<position>1600 150 1725 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Pistons">
+				<name>Pistons</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1750 150 1875 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Connecting_rod">
+				<name>Connecting_rod</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>2000 150 2125 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Crankshaft">
+				<name>Crankshaft</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>2150 150 2275 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Flywheel">
+				<name>Flywheel</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>2300 150 2425 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Engine_block">
+				<name>Engine_block</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>2450 150 2575 215</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Cylinder_head">
+				<name>Cylinder_head</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>0 0 125 65</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Valve">
+				<name>Valve</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>0 0 125 65</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Valve_drive">
+				<name>Valve_drive</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>0 0 125 65</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Camshaft">
+				<name>Camshaft</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>0 0 125 65</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Shaft_drive">
+				<name>Shaft_drive</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>0 0 125 65</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 			<node id="Elevated_fuel_consumption">
@@ -786,6 +1106,134 @@
 				<outline color="0000bb" />
 				<font color="000000" name="Arial" size="8" />
 				<position>5450 350 5575 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Reduced_compression_in_cylinders">
+				<name>Reduced_compression_in_cylinders</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>5700 350 5825 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Metallic_knock_is_heard_when_engine_is_running">
+				<name>Metallic_knock_is_heard_when_engine_is_running</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>5850 350 5975 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="No_idling">
+				<name>No_idling</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>6000 350 6125 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Gear_shift_stiffness">
+				<name>Gear_shift_stiffness</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>6150 350 6275 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Vibration_when_pressing_clutch_pedal">
+				<name>Vibration_when_pressing_clutch_pedal</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>6300 350 6425 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Creaking_and_grinding_noise_at_startup">
+				<name>Creaking_and_grinding_noise_at_startup</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>6450 350 6575 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Physical_deformation_of_engine_block">
+				<name>Physical_deformation_of_engine_block</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>6600 350 6725 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Breakage_of_thread_of_fastening_cylinder_head">
+				<name>Breakage_of_thread_of_fastening_cylinder_head</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>6750 350 6875 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Leaks_in_area_of_cylinder_head_gasket">
+				<name>Leaks_in_area_of_cylinder_head_gasket</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>6900 350 7025 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Reduced_compression_cylinders_block">
+				<name>Reduced_compression_cylinders_block</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>7050 350 7175 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Antifreeze_traces_in_exhaust_system">
+				<name>Antifreeze_traces_in_exhaust_system</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>7200 350 7325 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Pops_are_heard_in_exhaust_pipe">
+				<name>Pops_are_heard_in_exhaust_pipe</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>7350 350 7475 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Exhaust_color_gray_black">
+				<name>Exhaust_color_gray_black</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>7500 350 7625 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Candle_deposits">
+				<name>Candle_deposits</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>7650 350 7775 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Leaking_in_camshaft_oil_seal_area">
+				<name>Leaking_in_camshaft_oil_seal_area</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>7800 350 7925 415</position>
+				<barchart active="true" width="125" height="65" />
+			</node>
+			<node id="Timing_Belt_Problems">
+				<name>Timing_Belt_Problems</name>
+				<interior color="e5f6f7" />
+				<outline color="0000bb" />
+				<font color="000000" name="Arial" size="8" />
+				<position>8000 350 8125 415</position>
 				<barchart active="true" width="125" height="65" />
 			</node>
 		</genie>

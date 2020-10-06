@@ -69,6 +69,38 @@ def main():
   
   Thermostat = Node('Thermostat') # (Термостат)
   Thermostat.addOutcomes(['work','not_work'])
+
+
+  Pistons = Node('Pistons') # (Поршни)
+  Pistons.addOutcomes(['work','not_work'])
+
+  Connecting_rod = Node('Connecting_rod') # (Шатун)
+  Connecting_rod.addOutcomes(['work','not_work'])
+
+  Crankshaft = Node('Crankshaft') # (Коленвал)
+  Crankshaft.addOutcomes(['work','not_work'])
+
+  Flywheel = Node('Flywheel') # (Маховик)
+  Flywheel.addOutcomes(['work','not_work'])
+
+  Engine_block = Node('Engine_block') # (Блок двигателя)
+  Engine_block.addOutcomes(['work','not_work'])
+
+  Cylinder_head = Node('Cylinder_head') # (Блок двигателя)
+  Cylinder_head.addOutcomes(['work','not_work'])
+
+
+  Valve = Node('Valve') # (Клапана)
+  Valve.addOutcomes(['work','not_work'])
+
+  Valve_drive = Node('Valve_drive') # (Привод клапанов)
+  Valve_drive.addOutcomes(['work','not_work'])
+
+  Camshaft = Node('Camshaft') # (Распределительный вал)
+  Camshaft.addOutcomes(['work','not_work'])
+
+  Shaft_drive = Node('Shaft_drive') # (Привод вала)
+  Shaft_drive.addOutcomes(['work','not_work'])
 ##################################Simptoms#######################################
   Elevated_fuel_consumption = Node('Elevated_fuel_consumption') # (Повышенный расход топлива)
   Elevated_fuel_consumption.addOutcomes(['yes','no'])
@@ -167,12 +199,63 @@ def main():
 
   Fluctuations_in_engine_temperature_while_driving = Node('Fluctuations_in_engine_temperature_while_driving') # (Колебания температуры двигателя при движении)
   Fluctuations_in_engine_temperature_while_driving.addOutcomes(['work','not_work'])
+
+
+  Reduced_compression_in_cylinders = Node('Reduced_compression_in_cylinders') # (Сниженная компресия в цилиндрах)
+  Reduced_compression_in_cylinders.addOutcomes(['work','not_work'])
+
+  Metallic_knock_is_heard_when_engine_is_running = Node('Metallic_knock_is_heard_when_engine_is_running') # (Слышен металический стук при работе двигателя)
+  Metallic_knock_is_heard_when_engine_is_running.addOutcomes(['work','not_work'])
+
+  No_idling = Node('No_idling') # (Отсутствие холостого ход)
+  No_idling.addOutcomes(['work','not_work'])
+
+  Gear_shift_stiffness = Node('Gear_shift_stiffness') # (Жесткость переключения передач)
+  Gear_shift_stiffness.addOutcomes(['work','not_work'])
+
+  Vibration_when_pressing_clutch_pedal = Node('Vibration_when_pressing_clutch_pedal') # (Вибрация при нажатии педали сцепления)
+  Vibration_when_pressing_clutch_pedal.addOutcomes(['work','not_work'])
+
+  Creaking_and_grinding_noise_at_startup = Node('Creaking_and_grinding_noise_at_startup') # (Скрип и скрежет при запуске)
+  Creaking_and_grinding_noise_at_startup.addOutcomes(['work','not_work'])
+
+  Physical_deformation_of_engine_block = Node('Physical_deformation_of_engine_block') # (Физическая деформация головы двигателя)
+  Physical_deformation_of_engine_block.addOutcomes(['work','not_work'])
+
+  Breakage_of_thread_of_fastening_cylinder_head = Node('Breakage_of_thread_of_fastening_cylinder_head') # (Срыв резьбы крепления головки блока цилиндров)
+  Breakage_of_thread_of_fastening_cylinder_head.addOutcomes(['work','not_work'])
+
+  Leaks_in_area_of_cylinder_head_gasket = Node('Leaks_in_area_of_cylinder_head_gasket') # (Течи в области прокладки ГБЦ)
+  Leaks_in_area_of_cylinder_head_gasket.addOutcomes(['work','not_work'])
+
+  Reduced_compression_cylinders_block = Node('Reduced_compression_cylinders_block') # (Сниженная компресия)
+  Reduced_compression_cylinders_block.addOutcomes(['work','not_work'])
+
+  Antifreeze_traces_in_exhaust_system = Node('Antifreeze_traces_in_exhaust_system') # (Следы тосола в выхлопной системе)
+  Antifreeze_traces_in_exhaust_system.addOutcomes(['work','not_work'])
+
+
+  Pops_are_heard_in_exhaust_pipe = Node('Pops_are_heard_in_exhaust_pipe') # (Слышны хлопки в выхлопной трубе)
+  Pops_are_heard_in_exhaust_pipe.addOutcomes(['work','not_work'])
+
+  Exhaust_color_gray_black = Node('Exhaust_color_gray_black') # (Цвет выхлопа серо-черный)
+  Exhaust_color_gray_black.addOutcomes(['work','not_work'])
+
+  Candle_deposits = Node('Candle_deposits') # (Нагар на свечах)
+  Candle_deposits.addOutcomes(['work','not_work'])
+
+  Leaking_in_camshaft_oil_seal_area = Node('Leaking_in_camshaft_oil_seal_area') # (Течь в области сальника распредвала)
+  Leaking_in_camshaft_oil_seal_area.addOutcomes(['work','not_work'])
+
+  Timing_Belt_Problems = Node('Timing_Belt_Problems') # (Проблемы с ремнем ГРМ)
+  Timing_Belt_Problems.addOutcomes(['work','not_work'])
 ###################################################################################################
   # Add arc to 'Elevated_fuel_consumption'
   arc_High_pressure_pump__Elevated_fuel_consumption = Arc(High_pressure_pump, Elevated_fuel_consumption)
   arc_Fuel_filter__Elevated_fuel_consumption = Arc(Fuel_filter, Elevated_fuel_consumption)
   arc_Injectors__Elevated_fuel_consumption = Arc(Injectors, Elevated_fuel_consumption)
   arc_Fuel_priming_pump__Elevated_fuel_consumption = Arc(Fuel_priming_pump, Elevated_fuel_consumption)
+  arc_Pistons__Elevated_fuel_consumption = Arc(Pistons, Elevated_fuel_consumption)
 
   
   # Add arc to Unstable_engine_operation
@@ -187,21 +270,25 @@ def main():
   arc_Fuel_filter__Drop_in_engine_power = Arc(Fuel_filter, Drop_in_engine_power)
   arc_Injectors__Drop_in_engine_power = Arc(Injectors, Drop_in_engine_power)
   arc_Fuel_priming_pump__Drop_in_engine_power = Arc(Fuel_priming_pump, Drop_in_engine_power)
+  arc_Pistons__Drop_in_engine_power = Arc(Pistons, Drop_in_engine_power)
+  arc_Crankshaft__Drop_in_engine_power = Arc(Crankshaft, Drop_in_engine_power)
+  arc_Flywheel__Drop_in_engine_power = Arc(Flywheel, Drop_in_engine_power)
+  arc_Valve__Drop_in_engine_power = Arc(Valve, Drop_in_engine_power)
+  arc_Valve_drive__Drop_in_engine_power = Arc(Valve_drive, Drop_in_engine_power)
+  arc_Camshaft__Drop_in_engine_power = Arc(Camshaft, Drop_in_engine_power)
 
 
   # Add arc to Difficult_engine_starting
   arc_High_pressure_pump__Difficult_engine_starting = Arc(High_pressure_pump, Difficult_engine_starting)
-  arc_Fuel_filter__Difficult_engine_starting = Arc(Fuel_filter, Difficult_engine_starting)
-  arc_Injectors__Difficult_engine_starting = Arc(Injectors, Difficult_engine_starting)
   arc_Fuel_priming_pump__Difficult_engine_starting = Arc(Fuel_priming_pump, Difficult_engine_starting)
-
+  arc_Crankshaft__Difficult_engine_starting = Arc(Crankshaft, Difficult_engine_starting)
+  arc_Flywheel__Difficult_engine_starting = Arc(Flywheel, Difficult_engine_starting)
 
   # Add arc to Increase_in_engine_smoke
   arc_High_pressure_pump__Increase_in_engine_smoke = Arc(High_pressure_pump, Increase_in_engine_smoke)
-  arc_Fuel_filter__Increase_in_engine_smoke = Arc(Fuel_filter, Increase_in_engine_smoke)
   arc_Injectors__Increase_in_engine_smoke = Arc(Injectors, Increase_in_engine_smoke)
   arc_Fuel_priming_pump__Increase_in_engine_smoke = Arc(Fuel_priming_pump, Increase_in_engine_smoke)
-
+  arc_Pistons__Increase_in_engine_smoke = Arc(Pistons, Increase_in_engine_smoke)
 
   # Add arc to Appearance_of_oil_emulsion_in_engine_coolant
   arc_High_pressure_pump__Appearance_of_oil_emulsion_in_engine_coolant = Arc(High_pressure_pump, Appearance_of_oil_emulsion_in_engine_coolant)
@@ -216,13 +303,13 @@ def main():
   arc_Injectors__Increased_engine_noise = Arc(Injectors, Increased_engine_noise)
   arc_Fuel_priming_pump__Increased_engine_noise = Arc(Fuel_priming_pump, Increased_engine_noise)
   arc_Engine_oil__Increased_engine_noise = Arc(Engine_oil, Increased_engine_noise)
+  arc_Crankshaft__Increased_engine_noise = Arc(Crankshaft, Increased_engine_noise)
 
   # Add arc to When_engine_speed_rises_dips_occur
-  arc_High_pressure_pump__When_engine_speed_rises_dips_occur = Arc(High_pressure_pump, When_engine_speed_rises_dips_occur)
   arc_Fuel_filter__When_engine_speed_rises_dips_occur = Arc(Fuel_filter, When_engine_speed_rises_dips_occur)
-  arc_Injectors__When_engine_speed_rises_dips_occur = Arc(Injectors, When_engine_speed_rises_dips_occur)
-  arc_Fuel_priming_pump__When_engine_speed_rises_dips_occur = Arc(Fuel_priming_pump, When_engine_speed_rises_dips_occur)
-
+  arc_Crankshaft__When_engine_speed_rises_dips_occur = Arc(Crankshaft, When_engine_speed_rises_dips_occur)
+  arc_Valve_drive__When_engine_speed_rises_dips_occur = Arc(Valve_drive, When_engine_speed_rises_dips_occur)
+  arc_Camshaft__When_engine_speed_rises_dips_occur = Arc(Camshaft, When_engine_speed_rises_dips_occur)
 
   # Add arc to Increase_in_engine_smoke
   arc_High_pressure_pump__Fuel_leak = Arc(High_pressure_pump, Fuel_leak)
@@ -232,11 +319,11 @@ def main():
 
 
   # Add arc to Increase_in_engine_smoke
-  arc_High_pressure_pump__When_car_is_running_engine_starts_to_triple = Arc(High_pressure_pump, When_car_is_running_engine_starts_to_triple)
   arc_Fuel_filter__When_car_is_running_engine_starts_to_triple = Arc(Fuel_filter, When_car_is_running_engine_starts_to_triple)
   arc_Injectors__When_car_is_running_engine_starts_to_triple = Arc(Injectors, When_car_is_running_engine_starts_to_triple)
-  arc_Fuel_priming_pump__When_car_is_running_engine_starts_to_triple = Arc(Fuel_priming_pump, When_car_is_running_engine_starts_to_triple)
-
+  arc_Cylinder_head__When_car_is_running_engine_starts_to_triple = Arc(Cylinder_head, When_car_is_running_engine_starts_to_triple)
+  arc_Valve__When_car_is_running_engine_starts_to_triple = Arc(Valve, When_car_is_running_engine_starts_to_triple)
+  arc_Valve_drive__When_car_is_running_engine_starts_to_triple = Arc(Valve_drive, When_car_is_running_engine_starts_to_triple)
 
 
   # Add arc to Oil_can_on_dashboard_lights_up
@@ -251,8 +338,7 @@ def main():
 
   # Add arc to Increased_oil_consumption
   arc_Oil_pump__Increased_oil_consumption = Arc(Oil_pump, Increased_oil_consumption)
-  arc_Oil_filter__Increased_oil_consumption = Arc(Oil_filter, Increased_oil_consumption)
-  arc_Engine_oil__Increased_oil_consumption = Arc(Engine_oil, Increased_oil_consumption)
+  arc_Pistons__Increased_oil_consumption = Arc(Pistons, Increased_oil_consumption)
 
   # Add arc to Engine_overheating
   arc_Oil_filter__Engine_overheating = Arc(Oil_filter, Engine_overheating)
@@ -310,6 +396,7 @@ def main():
   
   # Add arc Relief_valve_plunger_sticking
   arc_Expansion_tank__Smoke_from_under_hood = Arc(Expansion_tank, Smoke_from_under_hood)
+  arc_Cylinder_head__Smoke_from_under_hood = Arc(Cylinder_head, Smoke_from_under_hood)
 
   # Add arc White_steam_from_muffler
   arc_Expansion_tank__White_steam_from_muffler = Arc(Expansion_tank, White_steam_from_muffler)
@@ -322,6 +409,57 @@ def main():
   
   # Add arc Engine_takes_long_time_to_reach_operating_temperature
   arc_Thermostat__Fluctuations_in_engine_temperature_while_driving = Arc(Thermostat, Fluctuations_in_engine_temperature_while_driving)
+
+
+  # Add arc Reduced_compression_in_cylinders
+  arc_Pistons__Reduced_compression_in_cylinders = Arc(Pistons, Reduced_compression_in_cylinders)
+
+  # Add arc Metallic_knock_is_heard_when_engine_is_running
+  arc_Connecting_rod__Metallic_knock_is_heard_when_engine_is_running = Arc(Connecting_rod, Metallic_knock_is_heard_when_engine_is_running)
+  
+  # Add arc No_idling
+  arc_Crankshaft__No_idling = Arc(Crankshaft, No_idling)
+  
+  # Add arc Gear_shift_stiffness
+  arc_Flywheel__Gear_shift_stiffness = Arc(Flywheel, Gear_shift_stiffness)
+
+  # Add arc Vibration_when_pressing_clutch_pedal
+  arc_Flywheel__Vibration_when_pressing_clutch_pedal = Arc(Flywheel, Vibration_when_pressing_clutch_pedal)
+  
+  # Add arc Creaking_and_grinding_noise_at_startup
+  arc_Flywheel__Creaking_and_grinding_noise_at_startup = Arc(Flywheel, Creaking_and_grinding_noise_at_startup)
+  
+  # Add arc Physical_deformation_of_engine_block
+  arc_Engine_block__Physical_deformation_of_engine_block = Arc(Engine_block, Physical_deformation_of_engine_block)
+  
+  # Add arc Breakage_of_thread_of_fastening_cylinder_head
+  arc_Engine_block__Breakage_of_thread_of_fastening_cylinder_head = Arc(Engine_block, Breakage_of_thread_of_fastening_cylinder_head)
+  
+  # Add arc Leaks_in_area_of_cylinder_head_gasket
+  arc_Cylinder_head__Leaks_in_area_of_cylinder_head_gasket = Arc(Cylinder_head, Leaks_in_area_of_cylinder_head_gasket)
+  arc_Valve_drive__Leaks_in_area_of_cylinder_head_gasket = Arc(Valve_drive, Leaks_in_area_of_cylinder_head_gasket)
+  
+  # Add arc Reduced_compression_cylinders_block
+  arc_Cylinder_head__Reduced_compression_cylinders_block = Arc(Cylinder_head, Reduced_compression_cylinders_block)
+
+  # Add arc Antifreeze_traces_in_exhaust_system
+  arc_Cylinder_head__Antifreeze_traces_in_exhaust_system = Arc(Cylinder_head, Antifreeze_traces_in_exhaust_system)
+
+
+  # Add arc Pops_are_heard_in_exhaust_pipe
+  arc_Valve__Pops_are_heard_in_exhaust_pipe = Arc(Valve, Pops_are_heard_in_exhaust_pipe)
+
+  # Add arc Exhaust_color_gray_black
+  arc_Valve_drive__Exhaust_color_gray_black = Arc(Valve_drive, Exhaust_color_gray_black)
+
+  # Add arc Candle_deposits
+  arc_Valve_drive__Candle_deposits = Arc(Valve_drive, Candle_deposits)
+  
+  # Add arc Leaking_in_camshaft_oil_seal_area
+  arc_Valve_drive__Leaking_in_camshaft_oil_seal_area = Arc(Valve_drive, Leaking_in_camshaft_oil_seal_area)
+  
+  # Add arc Timing_Belt_Problems
+  arc_Shaft_drive__Timing_Belt_Problems = Arc(Shaft_drive, Timing_Belt_Problems)
 #########################################Set probabilities################################################
   High_pressure_pump.setProbabilities([0.99,0.01])
   Fuel_filter.setProbabilities([0.99,0.01])
@@ -336,7 +474,17 @@ def main():
   Radiator_cap.setProbabilities([0.99,0.01])
   Expansion_tank.setProbabilities([0.99,0.01])
   Thermostat.setProbabilities([0.99,0.01])
-  
+  Pistons.setProbabilities([0.99,0.01])
+  Connecting_rod.setProbabilities([0.99,0.01]) 
+  Crankshaft.setProbabilities([0.99,0.01]) 
+  Flywheel.setProbabilities([0.99,0.01]) 
+  Engine_block.setProbabilities([0.99,0.01]) 
+  Cylinder_head.setProbabilities([0.99,0.01]) 
+  Valve.setProbabilities([0.99,0.01]) 
+  Valve_drive.setProbabilities([0.99,0.01])
+  Camshaft.setProbabilities([0.99,0.01])
+  Shaft_drive.setProbabilities([0.99,0.01])
+
   Elevated_fuel_consumption.setProbabilities(
     get_probabilities_by_component("Elevated_fuel_consumption"))
 
@@ -434,6 +582,54 @@ def main():
   Fluctuations_in_engine_temperature_while_driving.setProbabilities(
     get_probabilities_by_component("Fluctuations_in_engine_temperature_while_driving"))
 
+  Reduced_compression_in_cylinders.setProbabilities(
+    get_probabilities_by_component("Reduced_compression_in_cylinders"))
+  
+  Metallic_knock_is_heard_when_engine_is_running.setProbabilities(
+    get_probabilities_by_component("Metallic_knock_is_heard_when_engine_is_running"))
+
+  No_idling.setProbabilities(
+    get_probabilities_by_component("No_idling"))
+  
+  Gear_shift_stiffness.setProbabilities(
+    get_probabilities_by_component("Gear_shift_stiffness"))
+
+  Vibration_when_pressing_clutch_pedal.setProbabilities(
+    get_probabilities_by_component("Vibration_when_pressing_clutch_pedal"))
+
+  Creaking_and_grinding_noise_at_startup.setProbabilities(
+    get_probabilities_by_component("Creaking_and_grinding_noise_at_startup"))
+
+  Physical_deformation_of_engine_block.setProbabilities(
+    get_probabilities_by_component("Physical_deformation_of_engine_block"))
+
+  Breakage_of_thread_of_fastening_cylinder_head.setProbabilities(
+    get_probabilities_by_component("Physical_deformation_of_engine_block"))
+
+  Leaks_in_area_of_cylinder_head_gasket.setProbabilities(
+    get_probabilities_by_component("Leaks_in_area_of_cylinder_head_gasket"))
+
+  Reduced_compression_cylinders_block.setProbabilities(
+    get_probabilities_by_component("Reduced_compression_cylinders_block"))
+
+  Antifreeze_traces_in_exhaust_system.setProbabilities(
+    get_probabilities_by_component("Antifreeze_traces_in_exhaust_system"))
+
+  Pops_are_heard_in_exhaust_pipe.setProbabilities(
+    get_probabilities_by_component("Pops_are_heard_in_exhaust_pipe"))
+
+  Exhaust_color_gray_black.setProbabilities(
+    get_probabilities_by_component("Exhaust_color_gray_black"))
+
+  Candle_deposits.setProbabilities(
+    get_probabilities_by_component("Candle_deposits"))
+
+  Leaking_in_camshaft_oil_seal_area.setProbabilities(
+    get_probabilities_by_component("Leaking_in_camshaft_oil_seal_area"))
+
+  Timing_Belt_Problems.setProbabilities(
+    get_probabilities_by_component("Timing_Belt_Problems"))
+
   # Changing the nodes spacial and visual attributes:
   High_pressure_pump.setNodePosition(100,10)
   Fuel_filter.setNodePosition(300,10)
@@ -448,7 +644,11 @@ def main():
   Radiator_cap.setNodePosition(1350,150)
   Expansion_tank.setNodePosition(1450,150)
   Thermostat.setNodePosition(1600,150)
-
+  Pistons.setNodePosition(1750,150)
+  Connecting_rod.setNodePosition(2000,150)
+  Crankshaft.setNodePosition(2150,150)
+  Flywheel.setNodePosition(2300,150)
+  Engine_block.setNodePosition(2450,150)
 
   Elevated_fuel_consumption.setNodePosition(500,350)
   Unstable_engine_operation.setNodePosition(700,350)
@@ -482,12 +682,29 @@ def main():
   Fan_turns_on_ahead_of_time.setNodePosition(5150,350)
   Engine_takes_long_time_to_reach_operating_temperature.setNodePosition(5300,350)
   Fluctuations_in_engine_temperature_while_driving.setNodePosition(5450,350)
+  Reduced_compression_in_cylinders.setNodePosition(5700,350)
+  Metallic_knock_is_heard_when_engine_is_running.setNodePosition(5850,350)
+  No_idling.setNodePosition(6000,350)
+  Gear_shift_stiffness.setNodePosition(6150,350)
+  Vibration_when_pressing_clutch_pedal.setNodePosition(6300,350)
+  Creaking_and_grinding_noise_at_startup.setNodePosition(6450,350)
+  Physical_deformation_of_engine_block.setNodePosition(6600,350)
+  Breakage_of_thread_of_fastening_cylinder_head.setNodePosition(6750,350)
+  Leaks_in_area_of_cylinder_head_gasket.setNodePosition(6900,350)
+  Reduced_compression_cylinders_block.setNodePosition(7050,350)
+  Antifreeze_traces_in_exhaust_system.setNodePosition(7200,350)
+  Pops_are_heard_in_exhaust_pipe.setNodePosition(7350,350)
+  Exhaust_color_gray_black.setNodePosition(7500,350)
+  Candle_deposits.setNodePosition(7650,350)
+  Leaking_in_camshaft_oil_seal_area.setNodePosition(7800,350)
+  Timing_Belt_Problems.setNodePosition(8000,350)
 
   # Add notes to network
   net.addNodes([High_pressure_pump, Fuel_filter,
                 Injectors, Fuel_priming_pump, Oil_pump, Oil_filter, Engine_oil, Cooling_fan, 
-                Coolant_pump, Radiator, Radiator_cap, Expansion_tank, Thermostat,
-                Elevated_fuel_consumption, Unstable_engine_operation, 
+                Coolant_pump, Radiator, Radiator_cap, Expansion_tank, Thermostat, Pistons, Connecting_rod,
+                Crankshaft, Flywheel, Engine_block, Cylinder_head, Valve, Valve_drive, 
+                Camshaft, Shaft_drive, Elevated_fuel_consumption, Unstable_engine_operation, 
                 Difficult_engine_starting, Drop_in_engine_power, Increase_in_engine_smoke, 
                 Appearance_of_oil_emulsion_in_engine_coolant, Increased_engine_noise,
                 When_engine_speed_rises_dips_occur, Fuel_leak, When_car_is_running_engine_starts_to_triple, 
@@ -498,14 +715,24 @@ def main():
                 Interior_heating_problems, Damaged_cylinder_head_gasket, Relief_valve_plunger_sticking, 
                 Loose_radiator_cap_spring, Smoke_from_under_hood, White_steam_from_muffler, Fan_turns_on_ahead_of_time,
                 Engine_takes_long_time_to_reach_operating_temperature, Fluctuations_in_engine_temperature_while_driving,
-                ])
+                Reduced_compression_in_cylinders, Metallic_knock_is_heard_when_engine_is_running, No_idling,
+                Gear_shift_stiffness, Vibration_when_pressing_clutch_pedal, Creaking_and_grinding_noise_at_startup,
+                Physical_deformation_of_engine_block, Breakage_of_thread_of_fastening_cylinder_head,
+                Leaks_in_area_of_cylinder_head_gasket, Reduced_compression_cylinders_block, Antifreeze_traces_in_exhaust_system,
+                Pops_are_heard_in_exhaust_pipe, Exhaust_color_gray_black, Candle_deposits, Leaking_in_camshaft_oil_seal_area,
+                Timing_Belt_Problems])
 
   # Write file
   net.writeFile('CarProblem.xdsl')
 
   # Set evidence
-  net.setEvidence('Cooling_fan_does_not_turn_on', 1)
-  net.setEvidence('Fluctuations_in_engine_temperature_while_driving', 1)
+  net.setEvidence('Drop_in_engine_power', 1)
+  net.setEvidence('Candle_deposits', 1)
+  net.setEvidence('Leaking_in_camshaft_oil_seal_area', 1)
+  
+  net.setEvidence('Increased_engine_noise', 1)
+  net.setEvidence('Timing_Belt_Problems', 1)
+  #net.setEvidence('Unstable_engine_operation', 1)
   
   #net.setEvidence('Fuel_filter', 1)
 
@@ -528,17 +755,29 @@ def main():
   print('Radiator_cap ', Radiator_cap.getBeliefs())
   print('Expansion_tank ', Expansion_tank.getBeliefs())
   print('Thermostat ', Thermostat.getBeliefs())
+  print('\n^^^^^^^^^^^^^Cooling system^^^^^^^^^^^^^\n')
+  print('Pistons ', Pistons.getBeliefs())
+  print('Connecting_rod ', Connecting_rod.getBeliefs())
+  print('Crankshaft ', Crankshaft.getBeliefs())
+  print('Flywheel ', Flywheel.getBeliefs())
+  print('Engine_block ', Engine_block.getBeliefs())
+  print('Cylinder_head ', Cylinder_head.getBeliefs())
+  print('\n^^^^^^^^^^^^^Gas distribution mechanism^^^^^^^^^^^^^\n')
+  print('Valve ', Valve.getBeliefs())
+  print('Valve_drive ', Valve_drive.getBeliefs())
+  print('Craftshft ', Crankshaft.getBeliefs())
+  print('Shaft_drive ', Shaft_drive.getBeliefs())
   print('__________________________')
-  print('Elevated_fuel_consumption ', Elevated_fuel_consumption.getBeliefs())
-  print('Unstable_engine_operation ', Unstable_engine_operation.getBeliefs())
-  print('Difficult_engine_starting ', Difficult_engine_starting.getBeliefs())
-  print('Drop_in_engine_power ', Drop_in_engine_power.getBeliefs())
-  print('Increase_in_engine_smoke ', Increase_in_engine_smoke.getBeliefs())
-  print('Appearance_of_oil_emulsion_in_engine_coolant ', Appearance_of_oil_emulsion_in_engine_coolant.getBeliefs())
-  print('Increased_engine_noise', Increased_engine_noise.getBeliefs())
-  print('When_engine_speed_rises_dips_occur', When_engine_speed_rises_dips_occur.getBeliefs())
-  print('Fuel_leak', Fuel_leak.getBeliefs())
-  print('When_car_is_running_engine_starts_to_triple', When_car_is_running_engine_starts_to_triple.getBeliefs())
+  # print('Elevated_fuel_consumption ', Elevated_fuel_consumption.getBeliefs())
+  # print('Unstable_engine_operation ', Unstable_engine_operation.getBeliefs())
+  # print('Difficult_engine_starting ', Difficult_engine_starting.getBeliefs())
+  # print('Drop_in_engine_power ', Drop_in_engine_power.getBeliefs())
+  # print('Increase_in_engine_smoke ', Increase_in_engine_smoke.getBeliefs())
+  # print('Appearance_of_oil_emulsion_in_engine_coolant ', Appearance_of_oil_emulsion_in_engine_coolant.getBeliefs())
+  # print('Increased_engine_noise', Increased_engine_noise.getBeliefs())
+  # print('When_engine_speed_rises_dips_occur', When_engine_speed_rises_dips_occur.getBeliefs())
+  # print('Fuel_leak', Fuel_leak.getBeliefs())
+  # print('When_car_is_running_engine_starts_to_triple', When_car_is_running_engine_starts_to_triple.getBeliefs())
   print('__________________________')
   print('Oil_can_on_dashboard_lights_up', Oil_can_on_dashboard_lights_up.getBeliefs())
   print('Oil_pressure_increase', Oil_pressure_increase.getBeliefs())
@@ -548,24 +787,41 @@ def main():
   print('Oil_turns_black', Oil_turns_black.getBeliefs())
   print('Low_oil_level', Low_oil_level.getBeliefs())
   print('__________________________')
-  print('Cooling_fan_does_not_turn_on', Cooling_fan_does_not_turn_on.getBeliefs())
-  print('Cooling_fan_does_not_turn_off', Cooling_fan_does_not_turn_off.getBeliefs())
-  print('Cooling_fan_external_damage', Cooling_fan_external_damage.getBeliefs())
-  print('Cooling_pump_pulley_play', Cooling_pump_pulley_play.getBeliefs())
-  print('Antifreeze_leakage_under_car', Antifreeze_leakage_under_car.getBeliefs())
-  print('Appearance_of_pungent_smell_of_antifreeze_in_car', Appearance_of_pungent_smell_of_antifreeze_in_car.getBeliefs())
-  print('Interior_heating_problems', Interior_heating_problems.getBeliefs())
-  print('Damaged_cylinder_head_gasket', Damaged_cylinder_head_gasket.getBeliefs())
-  print('Relief_valve_plunger_sticking', Relief_valve_plunger_sticking.getBeliefs())
-  print('Loose_radiator_cap_spring', Loose_radiator_cap_spring.getBeliefs())
-  print('Smoke_from_under_hood', Smoke_from_under_hood.getBeliefs())
-  print('White_steam_from_muffler', White_steam_from_muffler.getBeliefs())
-  print('Fan_turns_on_ahead_of_time', Fan_turns_on_ahead_of_time.getBeliefs())
-  print('Engine_takes_long_time_to_reach_operating_temperature', Engine_takes_long_time_to_reach_operating_temperature.getBeliefs())
-  print('Fluctuations_in_engine_temperature_while_driving', Fluctuations_in_engine_temperature_while_driving.getBeliefs())
-  
+  # print('Cooling_fan_does_not_turn_on', Cooling_fan_does_not_turn_on.getBeliefs())
+  # print('Cooling_fan_does_not_turn_off', Cooling_fan_does_not_turn_off.getBeliefs())
+  # print('Cooling_fan_external_damage', Cooling_fan_external_damage.getBeliefs())
+  # print('Cooling_pump_pulley_play', Cooling_pump_pulley_play.getBeliefs())
+  # print('Antifreeze_leakage_under_car', Antifreeze_leakage_under_car.getBeliefs())
+  # print('Appearance_of_pungent_smell_of_antifreeze_in_car', Appearance_of_pungent_smell_of_antifreeze_in_car.getBeliefs())
+  # print('Interior_heating_problems', Interior_heating_problems.getBeliefs())
+  # print('Damaged_cylinder_head_gasket', Damaged_cylinder_head_gasket.getBeliefs())
+  # print('Relief_valve_plunger_sticking', Relief_valve_plunger_sticking.getBeliefs())
+  # print('Loose_radiator_cap_spring', Loose_radiator_cap_spring.getBeliefs())
+  # print('Smoke_from_under_hood', Smoke_from_under_hood.getBeliefs())
+  # print('White_steam_from_muffler', White_steam_from_muffler.getBeliefs())
+  # print('Fan_turns_on_ahead_of_time', Fan_turns_on_ahead_of_time.getBeliefs())
+  # print('Engine_takes_long_time_to_reach_operating_temperature', Engine_takes_long_time_to_reach_operating_temperature.getBeliefs())
+  # print('Fluctuations_in_engine_temperature_while_driving', Fluctuations_in_engine_temperature_while_driving.getBeliefs())
+  print('__________________________')
+  print('Reduced_compression_in_cylinders', Reduced_compression_in_cylinders.getBeliefs())
+  print('Metallic_knock_is_heard_when_engine_is_running', Metallic_knock_is_heard_when_engine_is_running.getBeliefs())
+  print('No_idling', No_idling.getBeliefs())
+  print('Gear_shift_stiffness', Gear_shift_stiffness.getBeliefs())
+  print('Vibration_when_pressing_clutch_pedal', Vibration_when_pressing_clutch_pedal.getBeliefs())
+  print('Creaking_and_grinding_noise_at_startup', Creaking_and_grinding_noise_at_startup.getBeliefs())
+  print('Physical_deformation_of_engine_block', Physical_deformation_of_engine_block.getBeliefs())
+  print('Breakage_of_thread_of_fastening_cylinder_head', Breakage_of_thread_of_fastening_cylinder_head.getBeliefs())
+  print('Leaks_in_area_of_cylinder_head_gasket', Leaks_in_area_of_cylinder_head_gasket.getBeliefs())
+  print('Reduced_compression_cylinders_block', Reduced_compression_cylinders_block.getBeliefs())
+  print('Antifreeze_traces_in_exhaust_system', Antifreeze_traces_in_exhaust_system.getBeliefs())
+  print('__________________________')
+  print('Pops_are_heard_in_exhaust_pipe', Pops_are_heard_in_exhaust_pipe.getBeliefs())
+  print('Exhaust_color_gray_black', Exhaust_color_gray_black.getBeliefs())
+  print('Candle_deposits', Candle_deposits.getBeliefs())
+  print('Leaking_in_camshaft_oil_seal_area', Leaking_in_camshaft_oil_seal_area.getBeliefs())  
+  print('Timing_Belt_Problems', Timing_Belt_Problems.getBeliefs())  
 
-  
+
 # This is the standard boilerplate that calls the main() function.
 if __name__ == '__main__':
   main()
