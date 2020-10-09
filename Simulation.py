@@ -23,7 +23,7 @@ class Engine:
 def main():
     def clear(): os.system('cls')
 
-    tachometer = 0
+    tachometer = 43000
     
     crank = CrankMechanism(100,100,100,100,100,100,100,100,100, tachometer)
     gasDistribution = GasDistributionMechanism(100,100,100,100,100,100,100,100,100,100,100, tachometer)
@@ -38,24 +38,26 @@ def main():
     
 
     while True:
-        prettyTable.add_row(["Pistons 1", crank.Pistons_1, "-", "Valve 1" , gasDistribution.Valve_1, "-", "Cooling fan", coolingSystem.Cooling_fan, "-", "Oil pump", engineLubricationSystem.Oil_pump, "-", "High pressure fuel pump", fuelSystem.High_pressure_fuel_pump])
-        prettyTable.add_row(["Pistons 2", crank.Pistons_2, "-", "Valve 2" , gasDistribution.Valve_1, "-", "Coolant pump", coolingSystem.Coolant_pump, "-", "Oil filter", engineLubricationSystem.Oil_filter, "-", "Fuel filter", fuelSystem.Fuel_filter])
-        prettyTable.add_row(["Pistons 3", crank.Pistons_3, "-", "Valve 3" , gasDistribution.Valve_1, "-", "Radiator", coolingSystem.Radiator, "-", "Oil", engineLubricationSystem.Oil, "-", "Injectors", fuelSystem.Injectors])
-        prettyTable.add_row(["Pistons 4", crank.Pistons_4, "-", "Valve 4" , gasDistribution.Valve_1, "-", "Radiator cap", coolingSystem.Radiator_cap, "-", "-", "-", "-", "Fuel priming pump", fuelSystem.Fuel_priming_pump])
-        prettyTable.add_row(["Connecting rod", crank.Connecting_rod, "-", "Valve 5" , gasDistribution.Valve_1, "-", "Expansion tank", coolingSystem.Expansion_tank, "-", "-", "-", "-", "-", "-"])
-        prettyTable.add_row(["Crankshaft", crank.Crankshaft, "-", "Valve 6" , gasDistribution.Valve_1, "-", "Thermostat", coolingSystem.Thermostat, "-", "-", "-", "-","-", "-",])
-        prettyTable.add_row(["Flywheel", crank.Flywheel, "-", "Valve 7" , gasDistribution.Valve_1, "-", "-", "-", "-", "-", "-", "-", "-", "-"])
-        prettyTable.add_row(["Engine block", crank.Engine_block, "-", "Valve 8" , gasDistribution.Valve_1, "-", "-", "-", "-", "-", "-", "-", "-", "-"])
-        prettyTable.add_row(["Cylinder head", crank.Cylinder_head, "-", "Valve drive" , gasDistribution.Valve_drive, "-", "-", "-", "-", "-", "-", "-", "-", "-"])
-        prettyTable.add_row(["-", "-", "-", "Camshaft" , gasDistribution.Camshaft, "-", "-", "-", "-", "-","-", "-","-", "-"])
-        prettyTable.add_row(["-", "-", "-", "Shaft drive" , gasDistribution.Shaft_drive, "-", "-", "-", "-", "-", "-", "-", "-", "-",])
+        prettyTable.add_row(["Pistons 1", round(crank.Pistons_1, 2), "-", "Valve 1" , round(gasDistribution.Valve_1, 2), "-", "Cooling fan", round(coolingSystem.Cooling_fan, 2), "-", "Oil pump", round(engineLubricationSystem.Oil_pump, 2), "-", "High pressure fuel pump", round(fuelSystem.High_pressure_fuel_pump, 2)])
+        prettyTable.add_row(["Pistons 2", round(crank.Pistons_2, 2), "-", "Valve 2" , round(gasDistribution.Valve_1, 2), "-", "Coolant pump", round(coolingSystem.Coolant_pump, 2), "-", "Oil filter", round(engineLubricationSystem.Oil_filter, 2), "-", "Fuel filter", round(fuelSystem.Fuel_filter, 2)])
+        prettyTable.add_row(["Pistons 3", round(crank.Pistons_3, 2), "-", "Valve 3" , round(gasDistribution.Valve_1, 2), "-", "Radiator", round(coolingSystem.Radiator, 2), "-", "Oil", round(engineLubricationSystem.Oil, 2), "-", "Injectors", round(fuelSystem.Injectors, 2)])
+        prettyTable.add_row(["Pistons 4", round(crank.Pistons_4, 2), "-", "Valve 4" , round(gasDistribution.Valve_1, 2), "-", "Radiator cap", round(coolingSystem.Radiator_cap, 2), "-", "-", "-", "-", "Fuel priming pump", round(fuelSystem.Fuel_priming_pump, 2)])
+        prettyTable.add_row(["Connecting rod", round(crank.Connecting_rod, 2), "-", "Valve 5" , round(gasDistribution.Valve_1, 2), "-", "Expansion tank", round(coolingSystem.Expansion_tank, 2), "-", "-", "-", "-", "-", "-"])
+        prettyTable.add_row(["Crankshaft", round(crank.Crankshaft, 2), "-", "Valve 6" , round(gasDistribution.Valve_1, 2), "-", "Thermostat", round(coolingSystem.Thermostat, 2), "-", "-", "-", "-","-", "-",])
+        prettyTable.add_row(["Flywheel", round(crank.Flywheel, 2), "-", "Valve 7" , round(gasDistribution.Valve_1, 2), "-", "-", "-", "-", "-", "-", "-", "-", "-"])
+        prettyTable.add_row(["Engine block", round(crank.Engine_block, 2), "-", "Valve 8" , round(gasDistribution.Valve_1, 2), "-", "-", "-", "-", "-", "-", "-", "-", "-"])
+        prettyTable.add_row(["Cylinder head", round(crank.Cylinder_head, 2), "-", "Valve drive" , round(gasDistribution.Valve_drive, 2), "-", "-", "-", "-", "-", "-", "-", "-", "-"])
+        prettyTable.add_row(["-", "-", "-", "Camshaft" , round(gasDistribution.Camshaft, 2), "-", "-", "-", "-", "-","-", "-","-", "-"])
+        prettyTable.add_row(["-", "-", "-", "Shaft drive" , round(gasDistribution.Shaft_drive, 2), "-", "-", "-", "-", "-", "-", "-", "-", "-",])
 
         
-        print "tachometer: " + str(tachometer) + " km\n"
+        print("tachometer: " + str(tachometer) + " km\n")
         print(prettyTable)
+        
+        print(gasDistribution.get_occured_issues())
+        
 
-
-        increment_value = 105
+        increment_value = 1
         tachometer += increment_value
         
         crank.run(increment_value)

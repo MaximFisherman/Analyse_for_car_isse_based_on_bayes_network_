@@ -7,6 +7,20 @@ class CrankMechanism:
     # First problem with Cylinder head (gasket)
     cylinder_head = 200000
 
+    list_issues = [
+        'None',
+        'When_car_is_running_engine_starts_to_triple', 
+        'Drop_in_engine_power',
+        'Pops_are_heard_in_exhaust_pipe', 
+        'Exhaust_color_gray_black', 
+        'Candle_deposits', 
+        'Leaks_in_area_of_cylinder_head_gasket',
+        'When_engine_speed_rises_dips_occur',
+        'Leaking_in_camshaft_oil_seal_area', 
+        'Timing_Belt_Problems',
+        'Increased_engine_noise'
+        ]
+
     def __init__(self, 
                     Pistons_1, # Поршень
                     Pistons_2,
@@ -32,7 +46,13 @@ class CrankMechanism:
         self.Flywheel = Flywheel
         self.Engine_block = Engine_block
         self.Cylinder_head = Cylinder_head - cylinder_head_wear_pecentage
-    
+
+        self.list_set = set()
+
+
+    def get_occured_issues(self):
+        return self.list_set
+
     def run(self, increment_value):
         self.Pistons_1 -= 0.00083 * increment_value
         self.Pistons_2 -= 0.00083 * increment_value
