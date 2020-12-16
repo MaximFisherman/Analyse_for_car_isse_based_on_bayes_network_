@@ -80,14 +80,14 @@ class GasDistributionMechanism:
             (self.Valve_1 + self.Valve_2 + self.Valve_3 + self.Valve_4 + self.Valve_5 + self.Valve_6 + \
              self.Valve_7 + self.Valve_8) / 8
         
-        print("Occurs common strenght procent ", common_procent_strenght)
-        print("Occurs common valve drive procent ", (common_procent_valve_strenght + self.Valve_drive) / 2)
+        # print("Occurs common strenght procent ", common_procent_strenght)
+        # print("Occurs common valve drive procent ", (common_procent_valve_strenght + self.Valve_drive) / 2)
         
         When_car_is_running_engine_starts_to_triple_distribution = (self.set_zero(100 - \
             (((common_procent_valve_strenght + self.Valve_drive) / 2) + 51)) / 100)
         Drop_in_engine_power_distribution = (self.set_zero(100 - \
             (((common_procent_valve_strenght + self.Valve_drive + self.Camshaft) / 3) + 51)) / 100)
-        Pops_are_heard_in_exhaust_pipe_distribution = (self.set_zero(100 - (common_procent_valve_strenght + 40)) / 100)
+        Pops_are_heard_in_exhaust_pipe_distribution = (self.set_zero(100 - (common_procent_valve_strenght + 50)) / 100)
         
         Exhaust_color_gray_black_distribution = (self.set_zero(100 - \
             (self.Valve_drive + 45)) / 100)
@@ -106,8 +106,8 @@ class GasDistributionMechanism:
         Increased_engine_noise_distribution = (self.set_zero(100 - \
             ((self.Shaft_drive) + 51)) / 100)
 
-        print("Occurs common Timing_Belt_Problems_distribution ", Timing_Belt_Problems_distribution)
-        print("Occurs common Timing_Belt_Problems_distribution ", 100 - ((self.Valve_drive) + 51))
+        # print("Occurs common Timing_Belt_Problems_distribution ", Timing_Belt_Problems_distribution)
+        # print("Occurs common Timing_Belt_Problems_distribution ", 100 - ((self.Valve_drive) + 51))
         list_issues_p = [ 
             100.0,
             self.set_zero(When_car_is_running_engine_starts_to_triple_distribution), 
@@ -140,5 +140,19 @@ class GasDistributionMechanism:
         self.Valve_7 -= 0.001 * increment_value
         self.Valve_8 -= 0.001 * increment_value
         self.Valve_drive -= 0.0014 * increment_value
+
+        if self.Valve_drive < 49:
+            self.Valve_1 -= 0.001 * (100 - self.Valve_drive)
+            self.Valve_2 -= 0.001 * (100 - self.Valve_drive)
+            self.Valve_3 -= 0.001 * (100 - self.Valve_drive)
+            self.Valve_4 -= 0.001 * (100 - self.Valve_drive)
+            self.Valve_5 -= 0.001 * (100 - self.Valve_drive)
+            self.Valve_6 -= 0.001 * (100 - self.Valve_drive)
+            self.Valve_7 -= 0.001 * (100 - self.Valve_drive)
+            self.Valve_8 -= 0.001 * (100 - self.Valve_drive)
+        
         self.Camshaft -= 0.00125 * increment_value
+
+        if self.Camshaft < 50: 
+            self.Shaft_drive -= 0.001 * (100 - self.Valve_drive)
         self.Shaft_drive -= 0.00000000000000001 * increment_value
