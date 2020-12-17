@@ -1,0 +1,38 @@
+User ID,Work,Device,Strength,Work,,,Device,,,Suitable for use,
+15624510,No work,1,10,0,,,High_pressure_pump,1,,Work ,0
+15810944,Work ,2,100,1,,,Fuel_filter,2,,Not work,1
+15668575,No work,3,11,0,,,Injectors,3,,,
+15603246,No work,4,10,0,,,Fuel_priming_pump,4,,,
+15804002,Work ,5,65,1,,,Oil_pump,5,,,
+15728773,No work,6,20,0,,,Oil_filter,6,,,
+15598044,No work,7,10,0,,,Engine_oil,7,,,
+15694829,Work ,8,66,1,,,Cooling_fan,8,,,
+15600575,No work,9,12,0,,,Coolant_pump,9,,,
+15727311,No work,10,13,0,,,Radiator,10,,,
+15570769,Work ,11,60,0,,,Radiator_cap,11,,,
+15606274,No work,11,9,1,,,Expansion_tank,12,,,
+15746139,No work,12,20,1,,,Thermostat,13,,,
+15704987,Work ,12,100,0,,,Pistons,14,,,
+15628972,No work,12,24,1,,,Connecting_rod,15,,,
+15697686,No work,3,25,0,,,Crankshaft,16,,,
+15733883,Work ,1,70,0,,,Flywheel,17,,,
+15617482,No work,2,20,1,,,Engine_block,18,,,
+15704583,No work,3,12,0,,,Cylinder_head,19,,,
+15621083,Work ,3,80,1,,,Valve,20,,,
+15649487,No work,3,32,0,,,Valve_drive,21,,,
+15649487,No work,5,16,1,,,Camshaft,22,,,
+15649487,No work,1,12,1,,,Shaft_drive,23,,,
+15621083,Work ,3,77,1,,,,,,,
+15649487,No work,3,12,0,,,,,,,
+15649487,No work,3,13,0,,,,,,,
+15649487,Work ,3,80,1,,,,,,,
+15649487,Work ,3,100,1,,,,,,,
+15649487,Work ,3,88,1,,,,,,,
+15649487,Work ,3,78,1,,,,,,,
+15649487,Work ,3,92,1,,,,,,,
+15649487,Work ,3,59,1,,,,,,,
+33,Not work,3,14,0
+34,Work,3,80,1
+35,Work,3,90,1
+36,Not work,3,10,0
+37,Not work,3,1,0
