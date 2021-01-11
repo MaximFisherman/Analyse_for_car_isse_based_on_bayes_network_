@@ -904,54 +904,95 @@ def main():
 
           if (msvcrt.kbhit()):
             print "you pressed",msvcrt.getch(),"so now i will quit"
+            
+            print "Clear last result"
+            try:
+              for file in os.listdir('RandomForest') :
+                if file.endswith('.png'):
+                  os.remove("RandomForest/" + file) 
+            except Exception as e:
+              print("Error while delete old charts for RandomForest algoritm: %s", e)
+            
+            cmd_arg_line = ""
 
             if( int(round(High_pressure_pump.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "High_pressure_pump " + str(int(round(High_pressure_pump.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py High_pressure_pump 0 " + str(int(round(High_pressure_pump.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Fuel_filter.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Fuel_filter " + str(int(round(Fuel_filter.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Fuel_filter 0 " + str(int(round(Fuel_filter.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Injectors.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Injectors " + str(int(round(Injectors.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Injectors 0 " + str(int(round(Injectors.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Fuel_priming_pump.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Fuel_priming_pump " + str(int(round(Fuel_priming_pump.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Fuel_priming_pump 0 " + str(int(round(Fuel_priming_pump.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Oil_pump.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Oil_pump " + str(int(round(Oil_pump.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Oil_pump 0 " + str(int(round(Oil_pump.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Oil_filter.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Oil_filter " + str(int(round(Oil_filter.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Oil_filter 0 " + str(int(round(Oil_filter.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Engine_oil.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Engine_oil " + str(int(round(Engine_oil.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Engine_oil 0 " + str(int(round(Engine_oil.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Cooling_fan.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Cooling_fan " + str(int(round(Cooling_fan.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Cooling_fan 0 " + str(int(round(Cooling_fan.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Coolant_pump.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Coolant_pump " + str(int(round(Coolant_pump.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Coolant_pump 0 " + str(int(round(Coolant_pump.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Radiator.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Radiator " + str(int(round(Radiator.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Radiator 0 " + str(int(round(Radiator.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Radiator_cap.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Radiator_cap " + str(int(round(Radiator_cap.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Radiator_cap 0 " + str(int(round(Radiator_cap.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Expansion_tank.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Expansion_tank " + str(int(round(Expansion_tank.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Expansion_tank 0 " + str(int(round(Expansion_tank.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Thermostat.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Thermostat " + str(int(round(Thermostat.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Thermostat 0 " + str(int(round(Thermostat.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Pistons.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Pistons " + str(int(round(Pistons.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Pistons 0 " + str(int(round(Pistons.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Connecting_rod.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Connecting_rod " + str(int(round(Connecting_rod.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Connecting_rod 0 " + str(int(round(Connecting_rod.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Crankshaft.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Crankshaft " + str(int(round(Crankshaft.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Crankshaft 0 " + str(int(round(Crankshaft.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Flywheel.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Flywheel " + str(int(round(Flywheel.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Flywheel 0 " + str(int(round(Flywheel.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Engine_block.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Engine_block " + str(int(round(Engine_block.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Engine_block 0 " + str(int(round(Engine_block.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Cylinder_head.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Cylinder_head " + str(int(round(Cylinder_head.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Cylinder_head 0 " + str(int(round(Cylinder_head.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Valve.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Valve " + str(int(round(Valve.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Valve 0 " + str(int(round(Valve.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Valve_drive.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Valve_drive " + str(int(round(Valve_drive.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Valve_drive 0 " + str(int(round(Valve_drive.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Camshaft.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Camshaft " + str(int(round(Camshaft.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Camshaft 0 " + str(int(round(Camshaft.getBeliefs()[0] * 100))), shell=True)
             if( int(round(Shaft_drive.getBeliefs()[0] * 100)) < 50):
+              cmd_arg_line += "Shaft_drive " + str(int(round(Shaft_drive.getBeliefs()[0] * 100))) + " "
               subprocess.call("cd RandomForest && py -3 RandomForestImpl.py Shaft_drive 0 " + str(int(round(Shaft_drive.getBeliefs()[0] * 100))), shell=True)
 
+
+
+            with open('evidences.txt', 'w') as f:
+              for key in dict_of_evidence:
+                f.write(str(key) + "\n")
+              
+            subprocess.call("cd GeneratorPDF && py -3 GeneratorPDF.py " + cmd_arg_line, shell=True)
+            
           if data:
               #print >>sys.stderr, '\nsending data back to the client'
               connection.sendall(data)
